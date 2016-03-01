@@ -1,0 +1,33 @@
+/******************************************************************
+Site Name: 
+Author: 
+
+Stylesheet: Super Large Monitor Stylesheet
+
+You can add some advanced styles here if you like. This kicks in
+on larger screens.
+
+******************************************************************/
+
+// .qtip-puente {
+// 	max-width: 600px !important;
+// }
+
+.header {
+	.header-search {
+		input[type="search"] {
+			max-width: 250px;
+			display: inline-block;
+			margin: 0;
+			width: 250px;
+			margin-right: .5em;
+			position: relative;
+			top: 4px;
+		}
+		div {
+			.dashicons-search {
+    			left: 250px;
+			}
+		}
+	}
+}
