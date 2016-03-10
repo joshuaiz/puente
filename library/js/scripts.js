@@ -274,64 +274,86 @@ jQuery(document).ready(function($) {
 
 viewport = updateViewportDimensions();
 
-if (viewport.width >= 768) {
+    if (viewport.width >= 768) {
+    
+      $('header.header').scrollToFixed();
+    
+    }
+    
+    // Add class for formatting our schedule table
+    $('.schedule td[colspan]').filter(function() {
+      $(this).addClass('colspan').parent('tr').next('tr').addClass('after-header');
+    });
+    
+    // Expand/collapse for FAQ page
+    $('.faqs dt').each(function() {
+        $(this).click(function(){
+            $(this).toggleClass('question').next().slideToggle('normal').toggleClass('expanded');
+        });
+    });
+    
+    $('#expand-all').click(function(){
+      $('.faqs dt').addClass('question');
+      $('.faqs dd').slideDown(300).addClass('expanded');
+    });
+    
+    $('#collapse-all').click(function(){
+      $('.faqs dd').slideUp(300).removeClass('expanded');
+      $('.faqs dt').removeClass('question');
+    });
 
-  $('header.header').scrollToFixed();
-
-}
-
-$('.schedule td[colspan]').filter(function() {
-  $(this).addClass('colspan').parent('tr').next('tr').addClass('after-header');
-});
-
-$('.faqs dt').each(function() {
-  $(this).click(function(){
-  $(this).toggleClass('question').next().slideToggle('normal').toggleClass('expanded');
-});
-});
-
-$('#expand-all').click(function(){
-  $('.faqs dt').addClass('question');
-  $('.faqs dd').slideDown(300).addClass('expanded');
-});
-
-$('#collapse-all').click(function(){
-  $('.faqs dd').slideUp(300).removeClass('expanded');
-  $('.faqs dt').removeClass('question');
-  
-});
-
-$('#gform_submit_button_1, #gform_submit_button_2, #gform_submit_button_3').addClass('blue-btn');
-
-
+    // Add our button class to Gravity Forms buttons
+    $('#gform_submit_button_1, #gform_submit_button_2, #gform_submit_button_3').addClass('blue-btn');
 
 }); /* end of as page load scripts */
+
+// Smooth scrolling to anchor links
+jQuery(document).ready(function($){
+    $('a[href*="#"]:not([href="#"])').click(function() {
+    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+      var target = $(this.hash);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+      if (target.length) {
+        $('html, body').animate({
+          scrollTop: target.offset().top - 100
+        }, 1000);
+        return false;
+      }
+    }
+  });
+    // adds offset to custom links in menu
+    if (document.location.hash) {
+        setTimeout(function() {
+            window.scrollTo(window.scrollX, window.scrollY - 100);
+        }, 1000);
+    }
+});
 
 
 // Popups for staff bios. Still a wee bit janky
 jQuery(document).ready(function($){
-  var appendthis =  ("<div class='modal-overlay js-modal-close'></div>");
+    var appendthis =  ("<div class='modal-overlay js-modal-close'></div>");
 
-  $('a[data-modal-id]').each(function() { 
-    $(this).click(function(e) {
-    e.preventDefault();
-    $("body").append(appendthis);
-    $(".modal-overlay").fadeTo(500, 0.7);
-    //$(".js-modalbox").fadeIn(500);
-    // var modalBox = $(this).attr('data-modal-id');
-    // $('#'+modalBox).fadeIn($(this).data());
-    $(this).nearest('.bio-content').fadeIn($(this).data());
-  });
+    $('a[data-modal-id]').each(function() { 
+        $(this).click(function(e) {
+        e.preventDefault();
+        $("body").append(appendthis);
+        $(".modal-overlay").fadeTo(500, 0.7);
+        //$(".js-modalbox").fadeIn(500);
+        // var modalBox = $(this).attr('data-modal-id');
+        // $('#'+modalBox).fadeIn($(this).data());
+        $(this).nearest('.bio-content').fadeIn($(this).data());
+    });
   });  
   
   
-$(".js-modal-close, .modal-overlay, .x-close").click(function() {
-  $(".modal-box, .modal-overlay").fadeOut(500, function() {
-    setTimeout(function(){
-      $('.modal-overlay').remove()
-    },500);
-  });
-});
+    $(".js-modal-close, .modal-overlay, .x-close").click(function() {
+      $(".modal-box, .modal-overlay").fadeOut(500, function() {
+        setTimeout(function(){
+          $('.modal-overlay').remove()
+        },500);
+      });
+    });
  
 // $(window).resize(function() {
 //   $(".modal-box").css({

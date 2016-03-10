@@ -407,9 +407,22 @@ NAVIGATION STYLES
         .nav li ul.children li ul {
           top: 0;
           left: 100%; }
+      .nav li ul.sub-menu li.current-menu-item a,
+      .nav li ul.sub-menu li.current_page_item a,
+      .nav li ul.sub-menu li.current_page_ancestor a,
+      .nav li ul.children li.current-menu-item a,
+      .nav li ul.children li.current_page_item a,
+      .nav li ul.children li.current_page_ancestor a {
+        color: #fff; }
     .nav li:hover > ul {
       top: auto;
       visibility: visible; }
+  .nav li.current_page_item > a, .nav li.current_page_ancestor > a {
+    color: #235ba8 !important; }
+  .nav li#menu-item-508 a {
+    color: #fff !important; }
+    .nav li#menu-item-508 a:hover, .nav li#menu-item-508 a:focus {
+      color: #235ba8 !important; }
 
 /* end .nav */
 /********************
@@ -483,6 +496,14 @@ style a page via class
 
 .staff .bio-content {
   display: none; }
+
+.programs #main {
+  width: 61.8%;
+  margin: 0 auto;
+  float: none; }
+
+.programs .program-outer .program-groups .program-group .program-group-inner {
+  width: 61.8%; }
 
 .schedule-table {
   width: 45%; }
