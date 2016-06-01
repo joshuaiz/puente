@@ -261,4 +261,54 @@ function jk_load_dashicons() {
     wp_enqueue_style( 'dashicons' );
 }
 
+
+function my_theme_soliloquy_output($slider, $data) {
+    return wp_make_content_images_responsive($slider);
+}
+add_filter('soliloquy_output', 'my_theme_soliloquy_output', 10, 2);
+
+// wp_make_content_images_responsive needs the img tags to have a class with their id
+function my_theme_soliloquy_image_slide_class($classes, $item, $i, $data, $mobile) {
+    $classes[] = 'wp-image-' . $item['id'];
+    return $classes;
+}
+add_filter('soliloquy_output_item_image_classes', 'my_theme_soliloquy_image_slide_class', 10, 5);
+
+// Alter the image source that soliloquy uses so that responsive images will work
+function my_theme_soliloquy_image_src($src, $id, $item, $data) {
+    $base_url = trailingslashit( _wp_upload_dir_baseurl() );
+    $image_meta = get_post_meta( $item['id'], '_wp_attachment_metadata', true );
+    return $base_url . $image_meta['file'];
+}
+add_filter('soliloquy_image_src', 'my_theme_soliloquy_image_src', 10, 4);
+
+// Hook to disable soliloquy's preloading which stops responsive images being used.
+function my_theme_soliloquy_disable_preloading($disabled, $data) {
+    return true;
+}
+add_filter('soliloquy_disable_preloading', 'my_theme_soliloquy_disable_preloading', 10, 2);
+
+
+function envira_gallery_image_captions( $output, $id, $item, $data, $i ) {
+  
+  // IDs of galleries to display captions on
+  $galleriesToShowCaptions = array(
+    523,
+  );
+  
+  // Check if we need to display captions on this gallery
+  if ( !in_array( $data['id'], $galleriesToShowCaptions ) ) {
+    return $output;
+  }
+  if ( isset( $item['caption'] )) {
+    $output .= '<span class="caption">' . $item['caption'] . '</span>';
+  }
+  return $output;
+  
+}
+add_action( 'envira_gallery_output_after_link', 'envira_gallery_image_captions', 10, 5 );
+
+
+
+
 /* DON'T DELETE THIS CLOSING TAG */ ?>

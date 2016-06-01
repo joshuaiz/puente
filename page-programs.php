@@ -81,6 +81,7 @@
 		$stitle = get_sub_field('program_spanish_title');
 		$desc = get_sub_field('program_general_description');
 		$schedule = get_sub_field('program_group_schedule');
+		$spanish = get_sub_field('program_group_spanish_schedule');
 		$icon = get_sub_field('program_group_icon');
 
 		?>
@@ -108,6 +109,7 @@
 				<?php endif; ?>
 
 			<h3><?php echo $title; ?> <br />
+
 			<span class="title-spanish"><?php echo $stitle; ?></span></h3>
 
 			<div class="program-group-description program-<?php echo $anchor; ?>-description">
@@ -122,7 +124,12 @@
 
 			<div class="program-group-schedule program-group-<?php echo $anchor; ?>-schedule">
 
+
+				<h5>English Schedule</h5>
 				<?php echo do_shortcode($schedule); ?>
+				
+				<h5>Horario español</h5>
+				<?php echo do_shortcode($spanish); ?>
 
 			</div>
 
@@ -168,7 +175,7 @@
 
 				<?php if( have_rows('programs') ): ?>
 
-					<p><a class="submore" href="javascript:void(0);">+ See Program Details &amp; Schedules</a></p>
+					<p><a class="submore" href="javascript:void(0);">+ See Program Details</a></p>
 
 					<div class="sub-programs">
 
@@ -183,6 +190,9 @@
 									$desc = get_sub_field('program_description');
 									$schedule = get_sub_field('program_schedule');
 									$cat = get_sub_field('program_category');
+									$image = get_sub_field('contact_image');
+									$contact = get_sub_field('program_contact');
+									
 
 
 									// display each item as a list - with a class of completed ( if completed )
@@ -194,6 +204,46 @@
 										<div class="program-description program-<?php echo $anchor; ?>-description">
 
 											<p><?php echo $desc; ?></p>
+
+											<?php 
+
+
+
+										if( !empty($image) ): ?>
+
+										<div class="program-contact">
+
+											<div class="program-contact-image">
+										
+											<?php // vars
+											$url = $image['url'];
+											$title = $image['title'];
+											$alt = $image['alt'];
+											$caption = $image['caption'];
+										
+											// thumbnail
+											$size = 'thumbnail';
+											$thumb = $image['sizes'][ $size ];
+											$width = $image['sizes'][ $size . '-width' ];
+											$height = $image['sizes'][ $size . '-height' ];
+										
+											?>
+										
+											<a href="<?php echo $url; ?>" title="<?php echo $title; ?>">
+										
+												<img src="<?php echo $thumb; ?>" alt="<?php echo $alt; ?>" width="<?php echo $width; ?>" height="<?php echo $height; ?>" />
+										
+											</a>
+
+											</div>
+
+											<p><?php echo $contact; ?></p>
+
+
+										</div>
+										
+										
+										<?php endif; ?>
 
 											
 
@@ -208,6 +258,9 @@
 											</div>
 
 										<?php endif; ?>
+
+
+
 										
 									</li>
 
@@ -219,7 +272,11 @@
 
 						<?php endif; ?>
 
-						<p class="program-register"><a class="puente-btn" href="/programs/registration/" target="_blank">Register Now</a></p>
+						<div class="program-register">
+							
+							<?php echo $reg; ?>
+
+						</div>
 
 				</div>
 
@@ -233,7 +290,15 @@
 
 <?php endif; ?>
 
+		<div class="schedule-button">
+
+			<a class="puente-btn" href="/schedule/">See Full Schedule &rarr;</a>
+
+		</div>
+
 						</section>
+
+
 
 					</section>
 
@@ -244,14 +309,24 @@
 
 <script>
 jQuery(document).ready(function($){
+	$('.program-group-preschool .submore').click(function() {
+		$('.program-preschool .program-description, .program-preschool .program-schedule').slideToggle(500).toggleClass('expanded');
+		$(this).text( $(this).text() == '+ See Program Details' ? "- Hide Details" : "+ See Program Details");
+	});
+
 	$('.program-group-adult .submore').click(function() {
 		$('.program-adult .program-description, .program-adult .program-schedule').slideToggle(500).toggleClass('expanded');
-		$(this).text( $(this).text() == '+ See Program Details & Schedules' ? "- Hide Details" : "+ See Program Details & Schedules");
+		$(this).text( $(this).text() == '+ See Program Details' ? "- Hide Details" : "+ See Program Details");
 	});
 
 	$('.program-group-youth .submore').click(function() {
 		$('.program-youth .program-description, .program-youth .program-schedule').slideToggle(500).toggleClass('expanded');
-		$(this).text( $(this).text() == '+ See Program Details & Schedules' ? "- Hide Details" : "+ See Program Details & Schedules");
+		$(this).text( $(this).text() == '+ See Program Details' ? "- Hide Details" : "+ See Program Details");
+	});
+
+	$('.program-group-highschool .submore').click(function() {
+		$('.program-highschool .program-description, .program-highschool .program-schedule').slideToggle(500).toggleClass('expanded');
+		$(this).text( $(this).text() == '+ See Program Details' ? "- Hide Details" : "+ See Program Details");
 	});
 
 	$("a.program-file-link").each(function(){

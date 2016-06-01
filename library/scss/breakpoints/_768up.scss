@@ -116,7 +116,7 @@ NAVIGATION STYLES
 .nav {
 	border: 0;
 	ul {
-		background:$puente-light-blue2;
+		background:$puente-blue;
 		margin-top:0;
 		li a {
 			line-height: 32px;
@@ -135,7 +135,7 @@ NAVIGATION STYLES
 			has the possibility of being a mobile device.
 			*/
 			&:hover, &:focus {
-				color: $puente-blue;
+				color: $puente-light-blue2;
 				text-decoration: none;
 			}
 		}
@@ -161,8 +161,8 @@ NAVIGATION STYLES
 					padding-left: 10px;
 					border-right: 0;
 					display: block;
-					width: 180px;
-					border-bottom: 1px solid lighten($puente-light-blue2, 8%);
+					width: 200px;
+					border-bottom: 1px solid lighten($puente-blue, 8%);
 
 					&:hover,
 					&:focus { 
@@ -172,7 +172,7 @@ NAVIGATION STYLES
 					&:link {}
 				}
 				&:hover, &:focus {
-					background: $puente-blue;
+					background: $puente-light-blue2;
 				}
 
 				&:first-child {}
@@ -200,7 +200,10 @@ NAVIGATION STYLES
 			li.current_page_item,
 			li.current_page_ancestor {
 				a {
-					color: #fff;
+					color: darken($puente-light-blue2, 22%);
+					&:hover, &:focus {
+					color: $puente-blue !important;
+					}
 				}
 			}
 		}
@@ -223,17 +226,20 @@ NAVIGATION STYLES
 	}  /* end current highlighters */
 	
 	li.current_page_item > a, li.current_page_ancestor > a {
-			color: $puente-blue !important;
+			color: $puente-light-blue2;
+			&:hover, &:focus {
+					color: #fff;
+				}
 	}
 	
-	li#menu-item-508 {
-		a {
-			color: #fff !important;
-			&:hover, &:focus {
-					color: $puente-blue !important;
-				}
-		}
-	}
+	// li#menu-item-508 {
+	// 	a {
+	// 		color: #fff !important;
+	// 		&:hover, &:focus {
+	// 				color: $puente-blue !important;
+	// 			}
+	// 	}
+	// }
 
 } /* end .nav */
 
@@ -335,11 +341,6 @@ style a page via class
 		// float: left;
 		margin-right: 1.5em;
 	}
-	
-	.bio-role, .bio-title {
-		font-family: $vista-light;
-		font-size: 80%;
-	}
 	.bio-meta {
 		.staff-title {
 			height: 50px;
@@ -347,6 +348,14 @@ style a page via class
 	}
 	.bio-content {
 		display: none;
+	}
+	.team-images {
+		justify-content: flex-start;
+		.team-image {
+			width: 45%;
+			// padding: 1.5em;
+			margin-right: 1.5em;
+		}
 	}
 }
 
@@ -398,7 +407,18 @@ style a page via class
 .donate, .donate-2016-test {
 	.entry-content {
 		width: 70%;
-    	margin: 0 auto;
+    	margin: 0 auto 3em;
+    }
+    .honor-roll-outer {
+    	width: 70%;
+    	margin: 1.5em auto 3em;
+    	padding: 2.2em 0;
+    	border-top: 1px dotted #efefef;
+    }
+    .amount {
+    	width: 300px;
+    	padding: 0 .5em;
+    	line-height: normal;
     }
 }
 
@@ -406,6 +426,30 @@ style a page via class
 	.locations-list {
 		.location-list {
 			width: 45%;
+		}
+	}
+	.location-image {
+		margin: 1.5em 0;
+	}
+}
+
+.events {
+	.event-list-outer {
+		.event-list-inner {
+			.event-outer {
+				min-width: 500px;
+			}
+			.event-image {
+				width: 150px;
+				float: left;
+				img {
+					max-width: 100%;
+					height: auto;
+				}
+			}
+			.event-inner {
+				margin-left: 165px;
+			}
 		}
 	}
 }

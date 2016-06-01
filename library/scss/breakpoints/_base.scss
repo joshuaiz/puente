@@ -24,6 +24,11 @@ a img {
 	}
 }
 
+img {
+	max-width: 100%;
+	height: auto;
+}
+
 body {
 	font-family: $vista;
 	font-size: 100%;
@@ -64,6 +69,7 @@ p {
 #breadcrumbs {
 	font-family: $vista-light;
 	padding: 1.5em;
+	margin-bottom: 0;
 }
 
 .page-header {
@@ -84,6 +90,13 @@ p {
 .page-section {
 	padding: 1.5em;
 }
+
+a[href$='.pdf'] // this is for all the link which end .pdf extension. so you don;t need jquery  
+{  
+padding-left: 40px;  
+background: url(../images/pdf.png) center left no-repeat; 
+background-size: 33px 40px;
+}  
 
 /* background setup */
 .background {
@@ -240,6 +253,17 @@ style a page via class
 .single {}                        /* single post page */
 	.postid-1 {}                    /* individual post page by id (i.e. body.postid-73) */
 	.single-paged-1 {}              /* individual paged single (i.e. body.single-paged-3) */
+.single-puente_events {
+	.page-header {
+		background: none;
+		.single-title {
+			font-size: 2.2334em;
+		}
+	}
+	#main {
+		padding: 1.5em;
+	}
+}
 .attachment {}                    /* attatchment page */
 	.attachmentid-1 {}              /* individual attatchment page (i.e. body.attachmentid-763) */
 	.attachment-mime-type {}        /* style mime type pages */
@@ -268,53 +292,19 @@ style a page via class
 	}
 }
 
-.board { // board of directors page
+.board {
 	#main {
-		footer {
-			display: none;
-		}
+		height: 0;
 	}
-	.bios-outer {
-		clear: both;
-		padding: 1.5em;
-	}
-	.bios {
-		margin-top: 0;
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: space-between;
-	}
-	.bio {
-		// max-width: 245px;
-		padding: 0 10px;
-		// display: flex;
-		// flex-wrap: wrap;
-		margin: 0 0 2em;
-	}
-	.bio-photo {
-		img {
-			position: relative;
-			top: 8px;
-		}
-	}
-	.bio-wrap {
-		
-	}
-	.bio-meta {
-		h3 {
-			margin-bottom: 0 !important;
-		}
-		h4 {
-			margin-top: 8px;
-		}
-	}
-	.bio-role, .bio-title {
+	.bio-role {
 		font-family: $vista-light;
-		font-size: 80%;
+    	font-size: .675em;
+    	line-height: 1;
 	}
 }
 
-.staff {
+
+.staff, .board {
 	.bios-outer {
 		padding-top: 1.5em;
 		clear: both;
@@ -357,6 +347,10 @@ style a page via class
 	.bio-content {
 		// display: block;
 	}
+	.bio-role, .bio-title {
+		font-family: $vista-light;
+		font-size: 80%;
+	}
 	.popup-photo {
 		float: left;
 		margin-right: 1em;
@@ -367,10 +361,30 @@ style a page via class
 			top: 3px;
 		}
 	}
+	.team-images {
+		display: flex;
+		flex-wrap: wrap;
+	
+	}
 }
 
 .programs {
+	.hentry {
+		footer {
+			display: none;
+		}
+	}
 	.program-outer {
+		margin-bottom: 3em;
+		.schedule-button {
+			text-align: center;
+			padding: 2.2em;
+			border-top: 1px dotted #dedede;
+			.puente-btn {
+				font-size: 1.2em;
+			}
+		}
+		
 		.program-groups {
 			clear: both;
 			// display: flex;
@@ -404,7 +418,7 @@ style a page via class
 			.program-group-kindergarten {
 				// background-color: lighten($puente-blue, 22%);
 			}
-			.program-group-youth {
+			.program-group-highschool {
 				background-color: lighten($puente-light-blue, 32%);
 			}
 			.program-group-adult {
@@ -425,9 +439,30 @@ style a page via class
 			}
 		}
 		.program-register {
-			text-align: center;
-			margin: 0 auto;
+			// text-align: center;
+			// margin: 0 auto;
 		}
+	}
+	.program-group-youth-schedule {
+		.tablepress {
+			.row-4.even td {
+				background-color: #235ba8 !important;
+				font-size: 1.3em;
+				font-family: "VistaSansOT-Medium","Helvetica Neue",Helvetica,Arial,sans-serif;
+				color: #fff !important;
+			}
+		}
+	}
+	.program-group-adult-schedule {
+		.tablepress {
+			.row-5.odd td, .row-11.odd td, .row-16.even td, .row-19.odd td {
+				background-color: #235ba8 !important;
+				font-size: 1.3em;
+				font-family: "VistaSansOT-Medium","Helvetica Neue",Helvetica,Arial,sans-serif;
+				color: #fff !important;
+			}
+		}
+		
 	}
 }
 
@@ -591,9 +626,16 @@ style a page via class
 			margin-bottom: 4px;
 		}
 	}
+	.honor-rolls {
+		display: flex;
+		flex-wrap: wrap;
+	}
 }
 
 .locations {
+	.locations-outer {
+		margin-bottom: 3em;
+	}
 	.google-map iframe{
     	pointer-events: none;
 	}
@@ -603,11 +645,38 @@ style a page via class
 		flex-wrap: wrap;
 		justify-content: space-between;
 	}
+	.location-hours {
+		margin-top: 1.5em;
+	}
 }
 
 .financials {
 	.document-icon {
 		width: 15% !important;
+	}
+}
+
+.events {
+
+	.event-list-outer {
+		padding: 1.5em;
+		.event-list-inner {
+			display: flex;
+			flex-wrap: wrap;
+			.event-outer {
+				padding-top: 1em;
+				margin-bottom: 2.2em;
+				padding-bottom: 1.5em;
+				border-bottom: 1px dotted #dedede;
+			}
+			h2{
+				margin: 0;
+			}
+			h4 {
+				margin-top: 0;
+				margin-bottom: .5em;
+			}
+		}
 	}
 }
 
@@ -720,7 +789,7 @@ HEADER STYLES
 *********************/
 
 .header {
-	background-color: $puente-light-blue2;
+	background-color: $puente-blue;
 	height: 65px;
 	
 	#s {
@@ -991,20 +1060,22 @@ POSTS & CONTENT STYLES
 
 		.wp-caption {
 			max-width: 100%;
-			background: #eee;
-			padding: 5px;
+			background: #efefef;
+			padding: 5px 5px 10px;
 
 			/* images inside wp-caption */
 			img {
 				max-width: 100%;
 				margin-bottom: 0;
 				width: 100%;
+				height: auto;
 			}
 
 			p.wp-caption-text {
-				font-size: 0.85em;
+				font-size: 1em;
 				margin: 4px 0 7px;
 				text-align: center;
+				font-family: $vista;
 			}
 
 		} /* end .wp-caption */
@@ -1528,7 +1599,7 @@ SIDEBARS & ASIDES
 			margin-bottom: 0;
 		}
 	}
-
+	
 }
 
 #text-5 { // Social Media buttons/links
@@ -1539,11 +1610,12 @@ SIDEBARS & ASIDES
 	.social-links {
 		li {
 			display: inline-block;
-			margin-right: 10px;
+			margin-right: 8px !important;
 		}
-		img {
+		img, a, li {
 			width: 32px;
 			height: 32px;
+			overflow: hidden;
 		}
 	}
 }
@@ -1551,6 +1623,12 @@ SIDEBARS & ASIDES
 
 #acf_widget_210-2 { // locations widget with Google Maps
 	margin-bottom: 2em;
+	h5 {
+		color: #fff;
+	}
+	.location-image {
+		margin: 1.5em 0;
+	}
 	.locations-list {
 		display: flex;
 		flex-wrap: wrap;
@@ -1561,6 +1639,7 @@ SIDEBARS & ASIDES
 		li:last-child {
 			margin-right: 0;
 		}
+		
 		.google-map {
 			width: 300px;
 		}
@@ -1755,4 +1834,39 @@ a.close:hover {
 
 span.title {
 	font-size: 1.455em;
+}
+
+
+
+
+.envira-gallery-wrap .envira-gallery-public .envira-gallery-item img {
+	
+	
+}
+
+.envira-gallery-item {
+	margin-bottom: 1.5em;
+}
+
+.envira-gallery-item-inner {
+	padding: 15px !important;
+	background: #efefef !important;
+	text-align: center !important;
+	span.caption {
+		padding: 1em 0 0;
+		display: block;
+	}
+}
+
+
+#click-menu {
+	position: fixed !important;
+}
+
+#responsive-menu {
+	height: auto !important;
+}
+
+#responsive-menu #responsiveSearch {
+	height: auto !important;
 }

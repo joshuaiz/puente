@@ -1,6 +1,6 @@
 <?php
 /*
- Template Name: Locations Page
+ Template Name: Donate Page
 */
 ?>
 
@@ -73,81 +73,57 @@
 
 						</main>
 
-						<section class="locations-outer wrap cf">
+						<section class="honor-roll-outer">
+
+							<section class="honor-roll-inner">
 
 							<?php 
+							$intro = get_field('intro'); ?>
 
-							// Location widget template for the ACF Widgets plugin.
+							<h2>Our Supporters</h2>
+
+							<p class="intro"><?php echo $intro; ?></p>
+
+								<?php if( have_rows('honor_rolls') ): ?>
+
+								<ul class="honor-rolls">
 							
-							// Grab our repeater field
-							if( have_rows('locations_page') ): ?>
+								<?php while( have_rows('honor_rolls') ): the_row(); 
+							
+									// vars
+									$amount = get_sub_field('amount');
+									$donors = get_sub_field('donors');
+									
+							
+									?>
+							
+									<li class="amount">
+							
+										<h3><?php echo $amount; ?></h3>
 
-								<ul class="locations-list">
-
-									<?php $count = 0; // start our count for our map ID selectors, otherwise Google has a fit ?>
-
-									<?php while( have_rows('locations_page') ): the_row(); 
-
-									$count++; // increase the count after each loop
-
-										// vars
-										$name = get_sub_field('name');
-										$address = get_sub_field('address');
-										$map = get_sub_field('map');
-										$hours = get_sub_field('hours');
-										$programs = get_sub_field('programs');
-										$image = get_sub_field('image');
-								
+										<?php $lines = explode("\n", $donors); // or use PHP PHP_EOL constant
+										if ( !empty($lines) ) {
+										  echo '<ul>';
+										  foreach ( $lines as $line ) {
+										    echo '<li>'. trim( $line ) .'</li>';
+										  }
+										  echo '</ul>';
+										}
 										?>
-
-									<li class="location-list">
-
-										<h4 class="widgettitle"><?php echo $name; ?></h4>
-
-										<h5><?php echo $programs; ?></h5>
-
-											<p><?php echo $address; ?></p>
-
-											<div class="location-image">
-
-											<?php if( !empty($image) ): ?>
-
-												<img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
-
-											<?php endif; ?>
-
-											</div>
-
-											<div class="google-map">
-
-												<?php if( ! empty($map) ): ?>
-			
-													<?php echo $map; ?>
-			
-												<?php endif; ?> 
-
-											</div>
-
-											<div class="location-hours">
-				
-												<?php echo $hours; ?>
-
-											</div>
-
-
-
+							
 									</li>
-
+							
 								<?php endwhile; ?>
-
-							</ul>
+							
+								</ul>
 							
 							<?php endif; ?>
-							
-							<p>These hours are for August – June. For summer hours, please call the office.</p>
+
+							</section>
 
 
 						</section>
+
 						
 
 				</div>
@@ -156,15 +132,3 @@
 
 
 <?php get_footer(); ?>
-
-<script>
-jQuery(document).ready(function($){
-	$('.google-map').click(function () {
-    $('.google-map iframe').css("pointer-events", "auto");
-});
-
-$( ".google-map" ).mouseleave(function() {
-  $('.google-map iframe').css("pointer-events", "none"); 
-});
-});
-</script>

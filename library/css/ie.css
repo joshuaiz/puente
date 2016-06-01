@@ -347,7 +347,7 @@ NAVIGATION STYLES
   /* highlight current page */
   /* end current highlighters */ }
   .nav ul {
-    background: #A4C2DE;
+    background: #235ba8;
     margin-top: 0; }
     .nav ul li a {
       line-height: 32px; }
@@ -367,7 +367,7 @@ NAVIGATION STYLES
 			has the possibility of being a mobile device.
 			*/ }
       .nav li a:hover, .nav li a:focus {
-        color: #235ba8;
+        color: #A4C2DE;
         text-decoration: none; }
     .nav li ul.sub-menu,
     .nav li ul.children {
@@ -390,8 +390,8 @@ NAVIGATION STYLES
           padding-left: 10px;
           border-right: 0;
           display: block;
-          width: 180px;
-          border-bottom: 1px solid #c2d6e9; }
+          width: 200px;
+          border-bottom: 1px solid #2a6dca; }
           .nav li ul.sub-menu li a:hover, .nav li ul.sub-menu li a:focus,
           .nav li ul.children li a:hover,
           .nav li ul.children li a:focus {
@@ -399,7 +399,7 @@ NAVIGATION STYLES
         .nav li ul.sub-menu li:hover, .nav li ul.sub-menu li:focus,
         .nav li ul.children li:hover,
         .nav li ul.children li:focus {
-          background: #235ba8; }
+          background: #A4C2DE; }
         .nav li ul.sub-menu li:last-child a,
         .nav li ul.children li:last-child a {
           border-bottom: 0; }
@@ -413,16 +413,26 @@ NAVIGATION STYLES
       .nav li ul.children li.current-menu-item a,
       .nav li ul.children li.current_page_item a,
       .nav li ul.children li.current_page_ancestor a {
-        color: #fff; }
+        color: #528bc0; }
+        .nav li ul.sub-menu li.current-menu-item a:hover, .nav li ul.sub-menu li.current-menu-item a:focus,
+        .nav li ul.sub-menu li.current_page_item a:hover,
+        .nav li ul.sub-menu li.current_page_item a:focus,
+        .nav li ul.sub-menu li.current_page_ancestor a:hover,
+        .nav li ul.sub-menu li.current_page_ancestor a:focus,
+        .nav li ul.children li.current-menu-item a:hover,
+        .nav li ul.children li.current-menu-item a:focus,
+        .nav li ul.children li.current_page_item a:hover,
+        .nav li ul.children li.current_page_item a:focus,
+        .nav li ul.children li.current_page_ancestor a:hover,
+        .nav li ul.children li.current_page_ancestor a:focus {
+          color: #235ba8 !important; }
     .nav li:hover > ul {
       top: auto;
       visibility: visible; }
   .nav li.current_page_item > a, .nav li.current_page_ancestor > a {
-    color: #235ba8 !important; }
-  .nav li#menu-item-508 a {
-    color: #fff !important; }
-    .nav li#menu-item-508 a:hover, .nav li#menu-item-508 a:focus {
-      color: #235ba8 !important; }
+    color: #A4C2DE; }
+    .nav li.current_page_item > a:hover, .nav li.current_page_item > a:focus, .nav li.current_page_ancestor > a:hover, .nav li.current_page_ancestor > a:focus {
+      color: #fff; }
 
 /* end .nav */
 /********************
@@ -487,15 +497,20 @@ style a page via class
 .staff .bio-photo {
   margin-right: 1.5em; }
 
-.staff .bio-role, .staff .bio-title {
-  font-family: "VistaSansOT-Light", "VistaSansOT-Medium", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 80%; }
-
 .staff .bio-meta .staff-title {
   height: 50px; }
 
 .staff .bio-content {
   display: none; }
+
+.staff .team-images {
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+      -ms-flex-pack: start;
+          justify-content: flex-start; }
+  .staff .team-images .team-image {
+    width: 45%;
+    margin-right: 1.5em; }
 
 .programs #main {
   width: 61.8%;
@@ -522,10 +537,37 @@ style a page via class
 
 .donate .entry-content, .donate-2016-test .entry-content {
   width: 70%;
-  margin: 0 auto; }
+  margin: 0 auto 3em; }
+
+.donate .honor-roll-outer, .donate-2016-test .honor-roll-outer {
+  width: 70%;
+  margin: 1.5em auto 3em;
+  padding: 2.2em 0;
+  border-top: 1px dotted #efefef; }
+
+.donate .amount, .donate-2016-test .amount {
+  width: 300px;
+  padding: 0 .5em;
+  line-height: normal; }
 
 .locations .locations-list .location-list {
   width: 45%; }
+
+.locations .location-image {
+  margin: 1.5em 0; }
+
+.events .event-list-outer .event-list-inner .event-outer {
+  min-width: 500px; }
+
+.events .event-list-outer .event-list-inner .event-image {
+  width: 150px;
+  float: left; }
+  .events .event-list-outer .event-list-inner .event-image img {
+    max-width: 100%;
+    height: auto; }
+
+.events .event-list-outer .event-list-inner .event-inner {
+  margin-left: 165px; }
 
 /*********************
 SIDEBARS & ASIDES

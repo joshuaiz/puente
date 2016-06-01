@@ -104,7 +104,7 @@
 													<h4 class="staff-title"><span class="bio-title"><?php echo $title; ?></span></h4>
 							
 													<h4 class="h4-email"><a href="mailto:<?php echo $email; ?>"><?php echo $email; ?></a></h4>
-													<!-- <h5><a href="tel:<?php echo $phone; ?>"><?php echo $phone; ?></a></h5> -->
+													
 
 												</div>
 
@@ -135,6 +135,20 @@
 									</ul>
 
 								<?php endif; ?>
+
+						</div><?php // end bios ?>
+
+						<div class="team-outer page-section">
+
+							<h3>Our Teams</h3>
+
+							<section class="gallery-outer">
+
+							<?php $gallery = get_field('staff_gallery'); ?>
+							<?php echo do_shortcode( $gallery ); ?>
+
+							</section>
+
 
 						</div>
 

@@ -21,12 +21,15 @@ if( have_rows('locations', $acfw) ): ?>
 		$map = get_sub_field('map', $acfw);
 		$link = get_sub_field('link', $acfw);
 		$hours = get_sub_field('hours', $acfw);
+		$programs = get_sub_field('programs', $acfw);
 
 		?>
 
 		<li class="location">
 
 			<h4 class="widgettitle"><?php echo $name; ?></h4>
+
+			<h5><?php echo $programs; ?></h5>
 
 			<p><?php echo $address; ?></p>
 

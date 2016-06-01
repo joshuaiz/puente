@@ -92,7 +92,7 @@
 
 						?>
 
-						<div class="fullscreen background parallax" style="background-image:url(<?php echo $image['url']; ?>" data-img-width="1600" data-img-height="1064" data-diff="100">
+						<div class="fullscreen background parallax" style="background-image:url(<?php echo $image['url']; ?>)" data-img-width="1600" data-img-height="1064" data-diff="100">
     						
     						<div class="content-a">
         						<div class="content-b">

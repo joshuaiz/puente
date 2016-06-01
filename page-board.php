@@ -69,6 +69,7 @@
 
 						<div class="bios-outer page-section">
 
+
 							<?php if( have_rows('bios') ): ?>
 
 								<ul class="bios">
@@ -89,27 +90,38 @@
 
 											<div class="bio-photo">
 
-												<img src="<?php echo $photo['url']; ?>" alt="<?php echo $photo['alt'] ?>" />
+												<a class="js-open-modal" href="javascript:void(0);" data-modal-id="popup"><img src="<?php echo $photo['url']; ?>" alt="<?php echo $photo['alt'] ?>" /></a>
 
 											</div>
 
 											<div class="bio-wrap">
 
 												<div class="bio-meta">
-				
-													<h3><?php echo $name; ?><br><span class="bio-role"><?php echo $role; ?></span></h3>
 
-													<h4><?php echo $title; ?></h4>
+													<h3><a class="js-open-modal" href="javascript:void(0);" data-modal-id="popup"><?php echo $name; ?></a><br><span class="bio-role"><?php echo $title; ?></span></h3>
+				
+													
 
 												</div>
 
-												<div class="bio-content">
+												<div id="popup" class="bio-content modal-box">
+
+													<a href="javascript:void(0);" class="js-modal-close x-close close">×</a>
+
+													<div class="popup-photo">
+														
+														<img src="<?php echo $photo['url']; ?>" alt="<?php echo $photo['alt'] ?>" />
+													
+													</div>
 
 													<?php echo $bio; ?>
+
+													<a href="javascript:void(0);" class="x-close puente-btn">Close</a>
 
 												</div>		    	
 
 		    								</div>
+
 
 										</li>
 
