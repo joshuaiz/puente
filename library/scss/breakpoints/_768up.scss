@@ -315,7 +315,7 @@ style a page via class
 		// width: 225px;
 		// float: left;
 		// margin-right: 1.5em;
-		padding-bottom: 1.2em;
+		// padding-bottom: 1.2em;
 	}
 	.bio-content {
 		padding-right: 1.5em;
@@ -374,6 +374,26 @@ style a page via class
 				.program-group-inner {
 					width: 61.8%;
 				}
+				.program-photo {
+					clear: both;
+					float: left;
+					margin-right: 1.5em;
+					margin-bottom: 2.2em;
+					img {
+						
+						width: 250px;
+						height: auto;
+					}
+				
+				}
+				.program-contact {
+					padding-top: 1.5em;
+					border-top: 1px dotted #efefef;
+					.program-contact-image {
+						float: left;
+    					margin-right: 1em;
+    				}
+				}
 			}
 		}
 	}
@@ -384,6 +404,10 @@ style a page via class
 }
 
 .schedule {
+	#main {
+		width: 61.8%;
+		
+	}
 	.location-title {
 		height: 75px;
 	}
@@ -408,17 +432,6 @@ style a page via class
 	.entry-content {
 		width: 70%;
     	margin: 0 auto 3em;
-    }
-    .honor-roll-outer {
-    	width: 70%;
-    	margin: 1.5em auto 3em;
-    	padding: 2.2em 0;
-    	border-top: 1px dotted #efefef;
-    }
-    .amount {
-    	width: 300px;
-    	padding: 0 .5em;
-    	line-height: normal;
     }
 }
 
@@ -452,6 +465,26 @@ style a page via class
 			}
 		}
 	}
+}
+
+.honor-roll {
+	#main {
+		display: none;
+	}
+	.honor-roll-outer {
+    	width: 84%;
+    	margin: 1.5em auto 3em;
+    	padding: 1.5em;
+    	border-top: 1px dotted #efefef;
+    }
+    .honor-roll-intro {
+    	
+    }
+    .amount-group {
+    	width: 270px;
+    	padding: 0 .5em;
+    	line-height: normal;
+    }
 }
 
 /*********************

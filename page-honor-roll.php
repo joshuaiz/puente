@@ -1,6 +1,6 @@
 <?php
 /*
- Template Name: Donate Page
+ Template Name: Honor Roll Page
 */
 ?>
 
@@ -73,6 +73,77 @@
 
 						</main>
 
+						<section class="honor-roll-outer">
+
+							<section class="honor-roll-inner">
+
+							<div class="honor-roll-intro">
+
+								<?php $intro = get_field('intro'); ?>
+
+							<h2>Our Supporters</h2>
+
+							<p class="intro"><?php echo $intro; ?></p>
+
+							<div class="intro-photo">
+
+								<?php 
+
+									$photo = get_field('photo');
+									
+									if( !empty($photo) ): ?>
+									
+										<img src="<?php echo $photo['url']; ?>" alt="<?php echo $photo['alt']; ?>" />
+									
+									<?php endif; ?>
+
+								</div>
+								
+
+								
+
+							</div>
+
+
+								<?php if( have_rows('honor_rolls') ): ?>
+
+								<div class="honor-rolls">
+							
+								<?php while( have_rows('honor_rolls') ): the_row(); 
+							
+									// vars
+									$amount = get_sub_field('amount');
+									$donors = get_sub_field('donors');
+									
+							
+									?>
+							
+									<div class="amount-group">
+							
+										<h3><?php echo $amount; ?></h3>
+
+										<?php $lines = explode("\n", $donors); // or use PHP PHP_EOL constant
+										if ( !empty($lines) ) {
+										  echo '<ul class="donors">';
+										  foreach ( $lines as $line ) {
+										    echo '<li class="donor">'. trim( $line ) .'</li>';
+										  }
+										  echo '</ul>';
+										}
+										?>
+							
+									</div>
+							
+								<?php endwhile; ?>
+							
+								</div>
+							
+							<?php endif; ?>
+
+							</section>
+
+
+						</section>
 						
 
 				</div>

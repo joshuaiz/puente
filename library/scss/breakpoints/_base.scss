@@ -91,12 +91,7 @@ p {
 	padding: 1.5em;
 }
 
-a[href$='.pdf'] // this is for all the link which end .pdf extension. so you don;t need jquery  
-{  
-padding-left: 40px;  
-background: url(../images/pdf.png) center left no-repeat; 
-background-size: 33px 40px;
-}  
+  
 
 /* background setup */
 .background {
@@ -298,8 +293,17 @@ style a page via class
 	}
 	.bio-role {
 		font-family: $vista-light;
-    	font-size: .675em;
-    	line-height: 1;
+    	font-size: 1rem !important;
+    	line-height: normal;
+	}
+	.boards {
+		font-size: .875rem;
+		color: $puente-light-blue2;
+	}
+	#popup {
+		p {
+			padding-right: 1.5em;
+		}
 	}
 }
 
@@ -349,7 +353,8 @@ style a page via class
 	}
 	.bio-role, .bio-title {
 		font-family: $vista-light;
-		font-size: 80%;
+		font-size: .875rem;
+		line-height: normal;
 	}
 	.popup-photo {
 		float: left;
@@ -411,15 +416,34 @@ style a page via class
 				.program-group-inner {
 					padding: 0 1.5em;
 				}
+				.program-photo {
+					clear: both;
+					width: 250px;
+					min-height: 275px;
+				
+				}
+				.program {
+					clear: both;
+					
+				}
+				.program.expanded {
+					margin-bottom: 2.2em;
+					.program-contact-image {
+						margin-bottom: 1.5em;
+					}
+				}
+
 			}
 			.program-group-preschool {
-				background-color: lighten($puente-light-blue, 32%);
+				// background-color: lighten($puente-light-blue, 32%);
+				background-color: lighten(#FFC233, 12%);
 			}
 			.program-group-kindergarten {
 				// background-color: lighten($puente-blue, 22%);
 			}
 			.program-group-highschool {
-				background-color: lighten($puente-light-blue, 32%);
+				// background-color: lighten($puente-light-blue, 32%);
+				background-color: #B4EEB4;
 			}
 			.program-group-adult {
 				// background-color: lighten($puente-green, 22%);
@@ -620,15 +644,13 @@ style a page via class
 			margin-bottom: 0 !important; 
 		}
 		span.ginput_total {
-			font-size: 1.667em;
+			font-size: 2em;
+			background: #fff;
+    		padding: .5em;
 		}
 		#field_2_22 {
 			margin-bottom: 4px;
 		}
-	}
-	.honor-rolls {
-		display: flex;
-		flex-wrap: wrap;
 	}
 }
 
@@ -657,7 +679,12 @@ style a page via class
 }
 
 .events {
-
+	a[href$='.pdf'] // this is for all the link which end .pdf extension. so you don;t need jquery  
+{  
+padding-left: 40px;  
+background: url(../images/pdf.png) center left no-repeat; 
+background-size: 33px 40px;
+}
 	.event-list-outer {
 		padding: 1.5em;
 		.event-list-inner {
@@ -677,6 +704,16 @@ style a page via class
 				margin-bottom: .5em;
 			}
 		}
+	}
+}
+
+.honor-roll {
+	.honor-rolls {
+		display: flex;
+		flex-wrap: wrap;
+	}
+	.donor {
+		line-height: 1.4;
 	}
 }
 
@@ -1072,8 +1109,30 @@ POSTS & CONTENT STYLES
 			}
 
 			p.wp-caption-text {
-				font-size: 1em;
-				margin: 4px 0 7px;
+				font-size: .824em;
+    			margin: 4px 10px 7px;
+				text-align: center;
+				font-family: $vista;
+			}
+
+		} /* end .wp-caption */
+		
+		.photo-caption {
+			
+			background: #efefef;
+			padding: 5px 5px 10px;
+
+			/* images inside wp-caption */
+			img {
+				max-width: 100%;
+				margin-bottom: 0;
+				width: 100%;
+				height: auto;
+			}
+
+			p.wp-caption-text {
+				font-size: .824em;
+    			margin: 4px 10px 7px;
 				text-align: center;
 				font-family: $vista;
 			}
@@ -1821,6 +1880,10 @@ a.close:hover {
 	font-size: 1.4em !important;
 }
 
+.gfield input:focus {
+	border: 2px solid $puente-light-blue;
+}
+
 #mce-EMAIL:focus {
 	border: 2px solid $puente-light-blue;
 }
@@ -1853,6 +1916,10 @@ span.title {
 	background: #efefef !important;
 	text-align: center !important;
 	span.caption {
+		h4 {
+			margin-bottom: 14px;
+			letter-spacing: 0.05em;
+		}
 		padding: 1em 0 0;
 		display: block;
 	}

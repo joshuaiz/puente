@@ -86,17 +86,20 @@ POSTS & CONTENT STYLES
 		margin-right: 1.5em;
 		display: inline;
 		float: left;
+		margin-bottom: 1.5em;
 	}
 	.alignright, img.alignright {
 		margin-left: 1.5em;
 		display: inline;
 		float: right;
+		margin-bottom: 1.5em;
 	}
 	.aligncenter, img.aligncenter {
 		margin-right: auto;
 		margin-left: auto;
 		display: block;
 		clear: both;
+		margin-bottom: 1.5em;
 	}
 
 } /* end .entry-content */

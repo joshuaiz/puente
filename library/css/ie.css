@@ -243,16 +243,19 @@ POSTS & CONTENT STYLES
   .entry-content .alignleft, .entry-content img.alignleft {
     margin-right: 1.5em;
     display: inline;
-    float: left; }
+    float: left;
+    margin-bottom: 1.5em; }
   .entry-content .alignright, .entry-content img.alignright {
     margin-left: 1.5em;
     display: inline;
-    float: right; }
+    float: right;
+    margin-bottom: 1.5em; }
   .entry-content .aligncenter, .entry-content img.aligncenter {
     margin-right: auto;
     margin-left: auto;
     display: block;
-    clear: both; }
+    clear: both;
+    margin-bottom: 1.5em; }
 
 /* end .entry-content */
 /*********************
@@ -485,9 +488,6 @@ style a page via class
   padding: 0 1.5em 0 0;
   width: 33%; }
 
-.board .bio-photo {
-  padding-bottom: 1.2em; }
-
 .board .bio-content {
   padding-right: 1.5em; }
 
@@ -520,8 +520,27 @@ style a page via class
 .programs .program-outer .program-groups .program-group .program-group-inner {
   width: 61.8%; }
 
+.programs .program-outer .program-groups .program-group .program-photo {
+  clear: both;
+  float: left;
+  margin-right: 1.5em;
+  margin-bottom: 2.2em; }
+  .programs .program-outer .program-groups .program-group .program-photo img {
+    width: 250px;
+    height: auto; }
+
+.programs .program-outer .program-groups .program-group .program-contact {
+  padding-top: 1.5em;
+  border-top: 1px dotted #efefef; }
+  .programs .program-outer .program-groups .program-group .program-contact .program-contact-image {
+    float: left;
+    margin-right: 1em; }
+
 .schedule-table {
   width: 45%; }
+
+.schedule #main {
+  width: 61.8%; }
 
 .schedule .location-title {
   height: 75px; }
@@ -538,17 +557,6 @@ style a page via class
 .donate .entry-content, .donate-2016-test .entry-content {
   width: 70%;
   margin: 0 auto 3em; }
-
-.donate .honor-roll-outer, .donate-2016-test .honor-roll-outer {
-  width: 70%;
-  margin: 1.5em auto 3em;
-  padding: 2.2em 0;
-  border-top: 1px dotted #efefef; }
-
-.donate .amount, .donate-2016-test .amount {
-  width: 300px;
-  padding: 0 .5em;
-  line-height: normal; }
 
 .locations .locations-list .location-list {
   width: 45%; }
@@ -568,6 +576,20 @@ style a page via class
 
 .events .event-list-outer .event-list-inner .event-inner {
   margin-left: 165px; }
+
+.honor-roll #main {
+  display: none; }
+
+.honor-roll .honor-roll-outer {
+  width: 84%;
+  margin: 1.5em auto 3em;
+  padding: 1.5em;
+  border-top: 1px dotted #efefef; }
+
+.honor-roll .amount-group {
+  width: 270px;
+  padding: 0 .5em;
+  line-height: normal; }
 
 /*********************
 SIDEBARS & ASIDES

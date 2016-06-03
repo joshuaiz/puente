@@ -83,6 +83,7 @@
 		$schedule = get_sub_field('program_group_schedule');
 		$spanish = get_sub_field('program_group_spanish_schedule');
 		$icon = get_sub_field('program_group_icon');
+		$image = get_sub_field('cover_photo');
 
 		?>
 
@@ -94,19 +95,41 @@
 				<a name="<?php echo $anchor; ?>"></a>
 			<?php endif; ?>
 
-			<?php 
+			<?php if( !empty($image) ): 
 
-				
-			
-				if( !empty($icon) ): ?>
+	// vars
+	$url = $image['url'];
+	$title = $image['title'];
+	$alt = $image['alt'];
+	$caption = $image['caption'];
 
-				<div class="program-icon program-<?php echo $anchor; ?>-icon">
-				
-					<img src="<?php echo $icon['url']; ?>" alt="<?php echo $icon['alt']; ?>" />
+	// thumbnail
+	$size = 'large';
+	$thumb = $image['sizes'][ $size ];
+	$width = $image['sizes'][ $size . '-width' ];
+	$height = $image['sizes'][ $size . '-height' ];
 
-				</div>
-				
-				<?php endif; ?>
+	if( $caption ): ?>
+
+		<div class="wp-caption">
+
+	<?php endif; ?>
+
+	<a href="<?php echo $url; ?>" title="<?php echo $title; ?>">
+
+		<img src="<?php echo $thumb; ?>" alt="<?php echo $alt; ?>" width="<?php echo $width; ?>" height="<?php echo $height; ?>" />
+
+	</a>
+
+	<?php if( $caption ): ?>
+
+			<p class="wp-caption-text"><?php echo $caption; ?></p>
+
+		</div>
+
+	<?php endif; ?>
+
+<?php endif; ?>
 
 			<h3><?php echo $title; ?> <br />
 
@@ -192,6 +215,7 @@
 									$cat = get_sub_field('program_category');
 									$image = get_sub_field('contact_image');
 									$contact = get_sub_field('program_contact');
+									$photo = get_sub_field('photo');
 									
 
 
@@ -201,7 +225,43 @@
 
 										<h4><?php echo $title; ?></h4>
 
+										
+
 										<div class="program-description program-<?php echo $anchor; ?>-description">
+
+											
+											<?php if( !empty($photo) ): ?>
+
+											<?php $caption = $photo['caption']; ?>
+
+
+											
+
+												<div class="program-photo">
+
+												<?php if( $caption ): ?>
+
+											<div class="photo-caption">
+
+											<?php endif; ?>
+							
+													<img src="<?php echo $photo['url']; ?>" alt="<?php echo $photo['alt']; ?>" />
+
+													<?php if( $caption ): ?>
+
+												<p class="wp-caption-text"><?php echo $caption; ?></p>
+
+												</div>
+
+												<?php endif; ?>
+
+												</div>
+
+												
+											
+											<?php endif; ?>
+
+										
 
 											<p><?php echo $desc; ?></p>
 
@@ -310,22 +370,26 @@
 <script>
 jQuery(document).ready(function($){
 	$('.program-group-preschool .submore').click(function() {
-		$('.program-preschool .program-description, .program-preschool .program-schedule').slideToggle(500).toggleClass('expanded');
+		$('.program-preschool .program-description, .program-preschool .program-schedule').slideToggle(500);
+		$(this).nearest('li.program').toggleClass('expanded');
 		$(this).text( $(this).text() == '+ See Program Details' ? "- Hide Details" : "+ See Program Details");
 	});
 
 	$('.program-group-adult .submore').click(function() {
-		$('.program-adult .program-description, .program-adult .program-schedule').slideToggle(500).toggleClass('expanded');
+		$('.program-adult .program-description, .program-adult .program-schedule').slideToggle(500);
+		$(this).nearest('li.program').toggleClass('expanded');
 		$(this).text( $(this).text() == '+ See Program Details' ? "- Hide Details" : "+ See Program Details");
 	});
 
 	$('.program-group-youth .submore').click(function() {
-		$('.program-youth .program-description, .program-youth .program-schedule').slideToggle(500).toggleClass('expanded');
+		$('.program-youth .program-description, .program-youth .program-schedule').slideToggle(500);
+		$(this).nearest('li.program').toggleClass('expanded');
 		$(this).text( $(this).text() == '+ See Program Details' ? "- Hide Details" : "+ See Program Details");
 	});
 
 	$('.program-group-highschool .submore').click(function() {
-		$('.program-highschool .program-description, .program-highschool .program-schedule').slideToggle(500).toggleClass('expanded');
+		$('.program-highschool .program-description, .program-highschool .program-schedule').slideToggle(500);
+		$(this).nearest('li.program').toggleClass('expanded');
 		$(this).text( $(this).text() == '+ See Program Details' ? "- Hide Details" : "+ See Program Details");
 	});
 

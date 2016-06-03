@@ -82,6 +82,7 @@
 										$title = get_sub_field('title');
 										$photo = get_sub_field('photo');
 										$bio = get_sub_field('bio');
+										$boards = get_sub_field('boards');
 										
 								
 										?>
@@ -98,7 +99,13 @@
 
 												<div class="bio-meta">
 
-													<h3><a class="js-open-modal" href="javascript:void(0);" data-modal-id="popup"><?php echo $name; ?></a><br><span class="bio-role"><?php echo $title; ?></span></h3>
+													<h3><a class="js-open-modal" href="javascript:void(0);" data-modal-id="popup"><?php echo $name; ?></a><br />
+													<?php if( !empty($role) ): ?>
+
+														<span class="bio-role"><?php echo $role; ?></span><br />
+
+													<?php endif; ?>
+													<span class="boards"><?php echo $boards; ?></span><br /><span class="bio-role"><?php echo $title; ?></span></h3>
 				
 													
 
