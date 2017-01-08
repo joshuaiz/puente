@@ -76,8 +76,12 @@
 					</div><?php // end inner-content ?>
 
 
+				<section class="home-divider">
 
-					<section class="parallax-outer cf">
+				</section>
+
+
+					<!-- <section class="parallax-outer cf">
 
 						<?php 
 
@@ -102,7 +106,7 @@
         						</div>
 						    </div>
 						</div>
-					</section>
+					</section> -->
 
 
 					<div id="inner-content2" class="wrap cf">

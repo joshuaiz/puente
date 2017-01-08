@@ -87,6 +87,7 @@
 								$date = get_field('date');
 								$time = get_field('time');
 								$map = get_field('location');
+								$location = get_field('event_location');
 
 								?>
 
@@ -112,6 +113,11 @@
 
 										<h4><?php echo $date; ?> | <?php echo $time; ?></h4>
 
+										<div class="event-location">
+
+											<?php echo $location; ?>
+
+										</div>
 										
 
 									</div>

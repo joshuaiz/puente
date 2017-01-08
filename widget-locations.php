@@ -7,7 +7,7 @@ if( have_rows('locations', $acfw) ): ?>
 
 	<ul class="locations-list">
 
-	<script src='//maps.googleapis.com/maps/api/js' type='text/javascript'></script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCr2xSVtta5h-sRu_Wb-q_qYVa-wN4syZo"></script>
 
 	<?php $count = 0; // start our count for our map ID selectors, otherwise Google has a fit ?>
 

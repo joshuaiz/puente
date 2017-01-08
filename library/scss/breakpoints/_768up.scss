@@ -322,7 +322,7 @@ style a page via class
 	}
 }
 
-.staff {
+.staff, .staff-test {
 	.bios-outer {
 		
 	}
@@ -340,6 +340,12 @@ style a page via class
 		// width: 225px;
 		// float: left;
 		margin-right: 1.5em;
+		img {
+			width: 225px;
+			height: 334px;
+			max-width: 225px;
+			
+		}
 	}
 	.bio-meta {
 		.staff-title {
@@ -462,6 +468,9 @@ style a page via class
 			}
 			.event-inner {
 				margin-left: 165px;
+				.event-description {
+					max-width: 600px;
+				}
 			}
 		}
 	}
@@ -659,3 +668,8 @@ mobile. Make sure to double check these!
 // 	box-shadow: 1px 3px 8px $puente-dark-grey !important;
 // 	z-index: 999;
 // }
+
+.modal-box {
+	left: 50% !important;
+	top: 50% !important;
+}

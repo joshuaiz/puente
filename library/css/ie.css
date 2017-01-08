@@ -124,7 +124,6 @@ p {
   word-break: break-word;
   word-wrap: break-word;
   -webkit-hyphens: none;
-  -moz-hyphens: none;
   -ms-hyphens: none;
       hyphens: none;
   -webkit-hyphenate-before: 2;
@@ -491,24 +490,27 @@ style a page via class
 .board .bio-content {
   padding-right: 1.5em; }
 
-.staff .bio {
+.staff .bio, .staff-test .bio {
   padding: 0 10px; }
 
-.staff .bio-photo {
+.staff .bio-photo, .staff-test .bio-photo {
   margin-right: 1.5em; }
+  .staff .bio-photo img, .staff-test .bio-photo img {
+    width: 225px;
+    height: 334px;
+    max-width: 225px; }
 
-.staff .bio-meta .staff-title {
+.staff .bio-meta .staff-title, .staff-test .bio-meta .staff-title {
   height: 50px; }
 
-.staff .bio-content {
+.staff .bio-content, .staff-test .bio-content {
   display: none; }
 
-.staff .team-images {
+.staff .team-images, .staff-test .team-images {
   -webkit-box-pack: start;
-  -webkit-justify-content: flex-start;
       -ms-flex-pack: start;
           justify-content: flex-start; }
-  .staff .team-images .team-image {
+  .staff .team-images .team-image, .staff-test .team-images .team-image {
     width: 45%;
     margin-right: 1.5em; }
 
@@ -576,6 +578,8 @@ style a page via class
 
 .events .event-list-outer .event-list-inner .event-inner {
   margin-left: 165px; }
+  .events .event-list-outer .event-list-inner .event-inner .event-description {
+    max-width: 600px; }
 
 .honor-roll #main {
   display: none; }
@@ -642,6 +646,10 @@ mobile. Make sure to double check these!
 
 .qtip-puente {
   max-width: 400px !important; }
+
+.modal-box {
+  left: 50% !important;
+  top: 50% !important; }
 
 /******************************************************************
 Site Name:

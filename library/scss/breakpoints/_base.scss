@@ -24,6 +24,12 @@ a img {
 	}
 }
 
+.soliloquy-link img {
+	&:hover, &:focus {
+		opacity: 1.0;
+	}
+}
+
 img {
 	max-width: 100%;
 	height: auto;
@@ -174,6 +180,16 @@ p {
 	font-family: $vista;
 }
 
+.list-square {
+	list-style-type: square;
+	margin-bottom: 1.5em;
+	list-style-position: inside;
+	li {
+		font-weight: 500;
+		font-family: $vista-light;
+	}
+}
+
 /********************
 WORDPRESS BODY CLASSES
 style a page via class
@@ -202,6 +218,10 @@ style a page via class
 		a {
 			font-family: $vista;
 		}
+	}
+	.home-divider {
+		height: 4px;
+		background-color: $puente-light-blue2;
 	}
 	.programs-outer {
 		padding: 1.5em 1.5em 0;
@@ -251,12 +271,16 @@ style a page via class
 .single-puente_events {
 	.page-header {
 		background: none;
+		padding-bottom: 0;
 		.single-title {
 			font-size: 2.2334em;
 		}
 	}
 	#main {
-		padding: 1.5em;
+		padding: 0 1.5em 1.5em;
+	}
+	.event-meta {
+		margin: 2em 0;
 	}
 }
 .attachment {}                    /* attatchment page */
@@ -289,7 +313,15 @@ style a page via class
 
 .board {
 	#main {
-		height: 0;
+		// height: 0;
+		article {
+			footer {
+				display: none;
+			}
+		}
+		.hentry {
+			padding-bottom: 0;
+		}
 	}
 	.bio-role {
 		font-family: $vista-light;
@@ -308,7 +340,7 @@ style a page via class
 }
 
 
-.staff, .board {
+.staff, .board, .staff-test {
 	.bios-outer {
 		padding-top: 1.5em;
 		clear: both;
@@ -320,7 +352,7 @@ style a page via class
 		margin-top: 0;
 	}
 	.bio {
-		max-width: 245px;
+		width: 245px;
 		padding: 0 10px;
 		// display: flex;
 		// flex-wrap: wrap;
@@ -479,7 +511,7 @@ style a page via class
 	}
 	.program-group-adult-schedule {
 		.tablepress {
-			.row-5.odd td, .row-11.odd td, .row-16.even td, .row-19.odd td {
+			.row-6.even td, .row-10.even td, .row-12.even td, .row-19.odd td {
 				background-color: #235ba8 !important;
 				font-size: 1.3em;
 				font-family: "VistaSansOT-Medium","Helvetica Neue",Helvetica,Arial,sans-serif;
@@ -491,6 +523,12 @@ style a page via class
 }
 
 .schedule {
+	.entry-content {
+		padding: 0;
+	}
+	.page-section {
+		padding-top: 0;
+	}
 	.schedule-outer {
 		clear: both;
 	}
@@ -703,6 +741,9 @@ background-size: 33px 40px;
 				margin-top: 0;
 				margin-bottom: .5em;
 			}
+			.event-location {
+				margin: 2.2em 0;
+			}
 		}
 	}
 }
@@ -714,6 +755,30 @@ background-size: 33px 40px;
 	}
 	.donor {
 		line-height: 1.4;
+	}
+}
+
+.careers {
+	.careers-outer {
+		padding: 1.5em;
+	}
+	.career-outer {
+		padding-bottom: 3em;
+    	border-bottom: 1px dotted #ccc;
+	}
+	.career-outer:last-of-type() {
+		border-bottom: 0;
+	}
+}
+
+.annual-golf-tournament {
+	.event-description {
+		.golf-schedule {
+			margin: 2em 0;
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+		}
 	}
 }
 
@@ -1785,7 +1850,7 @@ FOOTER STYLES
   display: none;
   position: absolute;
   z-index: 1002;
-  width: 98%;
+  width: 93%;
   background: white;
   border-bottom: 1px solid #aaa;
   border-radius: 4px;
@@ -1794,6 +1859,9 @@ FOOTER STYLES
   background-clip: padding-box;
   padding: 1em 1.5em;
   font-size: 15px;
+    // top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .modal-box header,
@@ -1815,6 +1883,14 @@ FOOTER STYLES
   border-top: 1px solid #ddd;
   background: rgba(0, 0, 0, 0.02);
   text-align: right;
+}
+
+#popup {
+	// left: 0;
+	// margin: 0 1em;
+	// max-width: 93%;
+	// top: 0px;
+	z-index: 999999;
 }
 
 .modal-overlay {
@@ -1936,4 +2012,8 @@ span.title {
 
 #responsive-menu #responsiveSearch {
 	height: auto !important;
+}
+
+.envira-gallery-wrap .envira-gallery-public.envira-gallery-css-animations .envira-gallery-item img {
+	opacity: 1;
 }

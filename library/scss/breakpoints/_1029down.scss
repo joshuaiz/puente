@@ -5,3 +5,16 @@
 	}
 	
 }
+
+#responsive-menu-button {
+	background: transparent !important;
+}
+
+#responsive-menu-item-73 {
+	a {
+		background: $puente-green !important;
+		&:hover, &:focus {
+			background: darken($puente-green, 14%) !important;
+		}
+	}
+}
