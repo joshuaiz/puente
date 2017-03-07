@@ -27,7 +27,7 @@ be seen on the Desktop.
 }
 
 .header {
-	height: 65px;
+	// height: 65px;
 	.header-search {
 		float: right;
 		
@@ -81,7 +81,7 @@ be seen on the Desktop.
 }
 
 #logo {
-		width: 180px;
+		width: 150px;
     	float: left;
     	padding: .5em 1em;
     	a img {
@@ -98,4 +98,10 @@ be seen on the Desktop.
 	// top: 50%; left: 50%;
 	width: 70%;
 	// margin: 0 auto;
+}
+
+.header.scroll-to-fixed-fixed {
+	#logo {
+		width: 140px;
+	}
 }

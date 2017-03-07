@@ -295,41 +295,56 @@ LAYOUT & GRID STYLES
 /*********************
 HEADER STYLES
 *********************/
-.header .header-search {
-  float: right; }
-  .header .header-search input[type="search"] {
-    display: inline-block;
-    margin: 0;
-    width: 100px;
-    margin-right: .2em;
-    position: relative;
-    top: 6px;
-    height: 30px; }
-  .header .header-search input#s:focus {
-    border: 2px solid #4DA9D4; }
-  .header .header-search #searchsubmit {
-    margin: 0;
-    font-size: 1em;
-    line-height: 28px;
-    position: relative;
-    top: 4px;
-    padding: 4px 5px; }
-  .header .header-search div {
-    position: relative;
-    top: 7px; }
-    .header .header-search div .dashicons-search {
-      position: absolute;
-      z-index: 9;
-      left: 100px;
-      top: 15px;
-      color: #aaa; }
+.header {
+  border-bottom: 2px solid #efefef; }
+  .header .header-search {
+    float: right;
+    top: 16px;
+    position: relative; }
+    .header .header-search input[type="search"] {
+      display: inline-block;
+      margin: 0;
+      width: 100px;
+      margin-right: .2em;
+      position: relative;
+      top: 6px;
+      height: 30px;
+      font-family: "futura-pt", "Helvetica Neue", Helvetica, Arial, sans-serif; }
+    .header .header-search input#s:focus {
+      border: 2px solid #00AEEF; }
+    .header .header-search #searchsubmit {
+      margin: 0;
+      font-size: 1em;
+      line-height: 28px;
+      position: relative;
+      top: 4px;
+      padding: 4px 5px;
+      font-family: "futura-pt", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      background: #00AEEF;
+      color: #fff !important; }
+      .header .header-search #searchsubmit:hover, .header .header-search #searchsubmit:focus {
+        background: #0066B3;
+        color: #fff; }
+    .header .header-search div {
+      position: relative;
+      top: 7px; }
+      .header .header-search div .dashicons-search {
+        position: absolute;
+        z-index: 9;
+        left: 100px;
+        top: 15px;
+        color: #aaa;
+        cursor: pointer; }
 
 #logo {
-  width: 130px;
+  width: 140px;
   float: left;
   padding: 0; }
   #logo a img {
     top: 15px; }
+
+.header.scroll-to-fixed-fixed #logo {
+  width: 130px; }
 
 /*********************
 NAVIGATION STYLES
@@ -338,10 +353,14 @@ NAVIGATION STYLES
   float: left; }
 
 #menu-item-73 {
-  background: #1EBC61; }
-  #menu-item-73 a:hover, #menu-item-73 a:focus {
-    background: #18994f;
-    color: #fff; }
+  background: #CA5FB6;
+  top: 25px; }
+  #menu-item-73 a {
+    color: #fff;
+    line-height: 48px; }
+    #menu-item-73 a:hover, #menu-item-73 a:focus {
+      background: #c040a8;
+      color: #fff; }
 
 .nav {
   border: 0;
@@ -349,7 +368,7 @@ NAVIGATION STYLES
   /* highlight current page */
   /* end current highlighters */ }
   .nav ul {
-    background: #235ba8;
+    background: #0066B3;
     margin-top: 0; }
     .nav ul li a {
       line-height: 32px; }
@@ -362,18 +381,18 @@ NAVIGATION STYLES
     /* showing sub-menus */ }
     .nav li a {
       border-bottom: 0;
-      line-height: 65px;
+      line-height: 99px;
       padding: 0 0.4em;
       /*
 			you can use hover styles here even though this size
 			has the possibility of being a mobile device.
 			*/ }
       .nav li a:hover, .nav li a:focus {
-        color: #A4C2DE;
+        color: #00AEEF;
         text-decoration: none; }
     .nav li ul.sub-menu,
     .nav li ul.children {
-      margin-top: 0;
+      margin-top: 2px;
       border: 0;
       border-top: 0;
       position: absolute;
@@ -389,11 +408,12 @@ NAVIGATION STYLES
 				*/ }
         .nav li ul.sub-menu li a,
         .nav li ul.children li a {
-          padding-left: 10px;
+          padding: 10px;
           border-right: 0;
           display: block;
-          width: 200px;
-          border-bottom: 1px solid #2a6dca; }
+          width: 220px;
+          border-bottom: 1px solid #0D4E98;
+          font-size: 1em; }
           .nav li ul.sub-menu li a:hover, .nav li ul.sub-menu li a:focus,
           .nav li ul.children li a:hover,
           .nav li ul.children li a:focus {
@@ -401,7 +421,7 @@ NAVIGATION STYLES
         .nav li ul.sub-menu li:hover, .nav li ul.sub-menu li:focus,
         .nav li ul.children li:hover,
         .nav li ul.children li:focus {
-          background: #A4C2DE; }
+          background: #00AEEF; }
         .nav li ul.sub-menu li:last-child a,
         .nav li ul.children li:last-child a {
           border-bottom: 0; }
@@ -415,7 +435,7 @@ NAVIGATION STYLES
       .nav li ul.children li.current-menu-item a,
       .nav li ul.children li.current_page_item a,
       .nav li ul.children li.current_page_ancestor a {
-        color: #528bc0; }
+        color: #005c7f; }
         .nav li ul.sub-menu li.current-menu-item a:hover, .nav li ul.sub-menu li.current-menu-item a:focus,
         .nav li ul.sub-menu li.current_page_item a:hover,
         .nav li ul.sub-menu li.current_page_item a:focus,
@@ -432,7 +452,7 @@ NAVIGATION STYLES
       top: auto;
       visibility: visible; }
   .nav li.current_page_item > a, .nav li.current_page_ancestor > a {
-    color: #A4C2DE; }
+    color: #00AEEF; }
     .nav li.current_page_item > a:hover, .nav li.current_page_item > a:focus, .nav li.current_page_ancestor > a:hover, .nav li.current_page_ancestor > a:focus {
       color: #fff; }
 
@@ -602,7 +622,7 @@ SIDEBARS & ASIDES
   margin-top: 2.2em; }
 
 .widgettitle {
-  border-bottom: 2px solid #444;
+  border-bottom: 2px solid #0066B3;
   margin-bottom: 0.75em; }
 
 .widget {
@@ -642,7 +662,7 @@ mobile. Make sure to double check these!
 
 /* end .footer-links */
 .copyright {
-  padding: 0 1.5em; }
+  padding: 0 10px; }
 
 .qtip-puente {
   max-width: 400px !important; }
@@ -668,37 +688,35 @@ be seen on the Desktop.
 #menu-item-73 {
   margin-left: 1em; }
 
-.header {
-  height: 65px; }
-  .header .header-search {
-    float: right; }
-    .header .header-search input[type="search"] {
-      max-width: 180px;
-      display: inline-block;
-      margin: 0;
-      width: 160px;
-      margin-right: .5em;
-      position: relative;
-      top: 4px; }
-    .header .header-search #searchsubmit {
-      margin: 0;
-      font-size: 1em;
-      line-height: 28px;
-      position: relative;
-      top: 4px;
-      padding: 6px 18px; }
-    .header .header-search div {
-      position: relative;
-      top: 7px; }
-      .header .header-search div .dashicons-search {
-        position: absolute;
-        z-index: 9;
-        left: 160px;
-        top: 15px;
-        color: #aaa; }
+.header .header-search {
+  float: right; }
+  .header .header-search input[type="search"] {
+    max-width: 180px;
+    display: inline-block;
+    margin: 0;
+    width: 160px;
+    margin-right: .5em;
+    position: relative;
+    top: 4px; }
+  .header .header-search #searchsubmit {
+    margin: 0;
+    font-size: 1em;
+    line-height: 28px;
+    position: relative;
+    top: 4px;
+    padding: 6px 18px; }
+  .header .header-search div {
+    position: relative;
+    top: 7px; }
+    .header .header-search div .dashicons-search {
+      position: absolute;
+      z-index: 9;
+      left: 160px;
+      top: 15px;
+      color: #aaa; }
 
 #logo {
-  width: 180px;
+  width: 150px;
   float: left;
   padding: .5em 1em; }
   #logo a img {
@@ -706,6 +724,9 @@ be seen on the Desktop.
 
 #popup {
   width: 70%; }
+
+.header.scroll-to-fixed-fixed #logo {
+  width: 140px; }
 
 /*
 you can call the larger styles if you want, but there's really no need

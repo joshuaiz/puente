@@ -36,7 +36,7 @@ img {
 }
 
 body {
-	font-family: $vista;
+	font-family: $futura;
 	font-size: 100%;
 	line-height: 1.5;
 	color: $text-color;
@@ -47,12 +47,13 @@ body {
 }
 
 em, i {
-	font-family: $vista-light-italic;
+	font-family: $futura;
+	font-style: italic;
 }
 
 p {
 	margin: 0 0 1em;
-	font-family: $vista-light;
+	font-family: $futura;
 }
 
 .intro {
@@ -73,7 +74,7 @@ p {
 }
 
 #breadcrumbs {
-	font-family: $vista-light;
+	font-family: $futura;
 	padding: 1.5em;
 	margin-bottom: 0;
 }
@@ -135,17 +136,19 @@ p {
     line-height: normal;
     text-shadow: 0 1px 4px #333;
     .quote-author {
-    	font-family: $vista-italic;
+    	font-family: $futura;
+    	font-style: italic;
     	font-size: 1.556rem;
     	line-height: 1.556;
     }
     span {
-    	font-family: $vista-light-italic;
+    	font-family: $futura;
+    	font-style: italic;
     }
 }
 
 .anchor-link {
-	font-family: $vista;
+	font-family: $futura;
 }
 
 .icon-file-docx {
@@ -177,7 +180,7 @@ p {
 }
 
 .submore {
-	font-family: $vista;
+	font-family: $futura;
 }
 
 .list-square {
@@ -186,7 +189,7 @@ p {
 	list-style-position: inside;
 	li {
 		font-weight: 500;
-		font-family: $vista-light;
+		font-family: $futura;
 	}
 }
 
@@ -216,12 +219,12 @@ style a page via class
 	}
 	.intro {
 		a {
-			font-family: $vista;
+			font-family: $futura;
 		}
 	}
 	.home-divider {
 		height: 4px;
-		background-color: $puente-light-blue2;
+		background-color: $online-blue;
 	}
 	.programs-outer {
 		padding: 1.5em 1.5em 0;
@@ -324,13 +327,13 @@ style a page via class
 		}
 	}
 	.bio-role {
-		font-family: $vista-light;
+		font-family: $futura;
     	font-size: 1rem !important;
     	line-height: normal;
 	}
 	.boards {
 		font-size: .875rem;
-		color: $puente-light-blue2;
+		color: $online-blue;
 	}
 	#popup {
 		p {
@@ -339,6 +342,11 @@ style a page via class
 	}
 }
 
+.staff, .locations {
+	#main {
+		display: none;
+	}
+}
 
 .staff, .board, .staff-test {
 	.bios-outer {
@@ -384,7 +392,7 @@ style a page via class
 		// display: block;
 	}
 	.bio-role, .bio-title {
-		font-family: $vista-light;
+		font-family: $futura;
 		font-size: .875rem;
 		line-height: normal;
 	}
@@ -504,7 +512,7 @@ style a page via class
 			.row-4.even td {
 				background-color: #235ba8 !important;
 				font-size: 1.3em;
-				font-family: "VistaSansOT-Medium","Helvetica Neue",Helvetica,Arial,sans-serif;
+				font-family: $futura;
 				color: #fff !important;
 			}
 		}
@@ -514,7 +522,7 @@ style a page via class
 			.row-6.even td, .row-10.even td, .row-12.even td, .row-19.odd td {
 				background-color: #235ba8 !important;
 				font-size: 1.3em;
-				font-family: "VistaSansOT-Medium","Helvetica Neue",Helvetica,Arial,sans-serif;
+				font-family: $futura;
 				color: #fff !important;
 			}
 		}
@@ -571,7 +579,7 @@ style a page via class
 	dd {
 		font-size: 18px !important;
 		color: $text-color !important;
-		font-family: $vista-light;
+		font-family: $futura;
 	}
 	.question {
 		margin-bottom: .3em;
@@ -639,7 +647,7 @@ style a page via class
 			margin-bottom: 1.5em;
 		}
 		a {
-			font-family: $vista !important;
+			font-family: $futura !important;
 		}
 	}
 }
@@ -668,9 +676,13 @@ style a page via class
 		.gfield_label {
 			font-weight: normal;
 		}
+		label {
+			position: relative;
+			top: 3px;
+		}
 		.gfield_description {
 			padding: 0;
-			font-family: $vista-light !important;
+			font-family: $futura !important;
 		}
 		input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], select, textarea, .field{
 			margin-bottom: 5px !important;
@@ -689,6 +701,24 @@ style a page via class
 		#field_2_22 {
 			margin-bottom: 4px;
 		}
+		#field_2_24 {
+			label {
+				margin-bottom: 20px;
+			}
+		}
+		#choice_2_25_9 {
+			float: left;
+		}
+		#label_2_5_1, #label_2_10_1 {
+			position: relative;
+			top: 3px;
+		}
+	}
+}
+
+.google-map {
+	.small a {
+		color: $online-blue;
 	}
 }
 
@@ -696,8 +726,13 @@ style a page via class
 	.locations-outer {
 		margin-bottom: 3em;
 	}
-	.google-map iframe{
-    	pointer-events: none;
+	.google-map {
+		.small a {
+			color: $online-blue;
+		}
+		iframe{
+    		pointer-events: none;
+		}
 	}
 	.locations-list {
 		clear: both;
@@ -796,7 +831,7 @@ LINK STYLES
 *********************/
 
 a, a:visited {
-	color: $link-color;
+	color: $balboa-blue;
 	text-decoration: none;
 	outline: 0;
 	/* on hover */
@@ -828,9 +863,9 @@ H1, H2, H3, H4, H5 STYLES
 
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
 	text-rendering: optimizelegibility;
-	font-weight: normal;
-	color: darken($puente-blue, 11%);
-	font-weight: $vista-bold;
+	font-weight: 600;
+	color: $deep-blue;
+	font-family: $futura;
 	letter-spacing: normal;
 	/*
 	if you're going to use webfonts, be sure to check your weights
@@ -891,8 +926,8 @@ HEADER STYLES
 *********************/
 
 .header {
-	background-color: $puente-blue;
-	height: 65px;
+	background-color: #fff;
+	// height: 65px;
 	
 	#s {
 		color: #bbb;
@@ -941,7 +976,7 @@ and more scalable.
 
 		a {
 			display: block;
-			color: $white;
+			// color: $white;
 			text-decoration: none;
 			font-size: .875em;
 
@@ -974,6 +1009,8 @@ and more scalable.
 
 				a {
 					padding-left: 30px;
+					color: $white;
+					line-height: normal;
 
 					&:hover,
 					&:focus {}
@@ -1177,7 +1214,7 @@ POSTS & CONTENT STYLES
 				font-size: .824em;
     			margin: 4px 10px 7px;
 				text-align: center;
-				font-family: $vista;
+				font-family: $futura;
 			}
 
 		} /* end .wp-caption */
@@ -1199,7 +1236,7 @@ POSTS & CONTENT STYLES
 				font-size: .824em;
     			margin: 4px 10px 7px;
 				text-align: center;
-				font-family: $vista;
+				font-family: $futura;
 			}
 
 		} /* end .wp-caption */
@@ -1242,7 +1279,7 @@ table {
 	width: 100%;
 	border: 1px solid $gray;
 	margin-bottom: 1.5em;
-	font-family: $vista-light;
+	font-family: $futura;
 	caption {
 		margin: 0 0 7px;
 		font-size: 0.75em;
@@ -1263,7 +1300,7 @@ table {
 		background-color: $puente-blue !important;
 		color: #fff;
 		font-size: 1.3em;
-		font-family: $vista;
+		font-family: $futura;
 	}
 			
 
@@ -1280,14 +1317,14 @@ table {
 		border-right: 1px solid $gray;
 		color: #fff;
 		font-size: 1.3em;
-		font-family: $vista;
+		font-family: $futura;
 		&:last-child {
 			border-right: 0;
 		}	
 	}
 
 .after-header > .column-1 {
-		font-family: $vista !important;
+		font-family: $futura !important;
 	}
 
 .tablepress {
@@ -1300,21 +1337,21 @@ table {
 		background-color: #f8f9fa !important;
 		color: #354e64;
 		font-size: 1em;
-		font-family: $vista-light !important;
+		font-family: $futura !important;
 	}
 			
 	.after-header.even > .colspan, .row-2 > .colspan {
 		background-color: #f9f9f9 !important;
 		color: #354e64;
 		font-size: 1em;
-		font-family: $vista-light !important;
+		font-family: $futura !important;
 	}
 }
 
 #tablepress-1, #tablepress-2 { // Adult Education (English & Spanish)
 	.row-2, .row-4, .row-16, .row-21, .row-25 {
 		> .column-1 {
-			font-family: $vista !important;
+			font-family: $futura !important;
 		}
 	}
 	.row-8, .row-9, .row-10, .row-11 {
@@ -1698,7 +1735,7 @@ SIDEBARS & ASIDES
 	flex-wrap: wrap;
 	justify-content: space-between;
 	h3, h4 {
-		color: $puente-light-blue;
+		color: $online-blue;
 	}
 	#mc_embed_signup {
 		h3 {
@@ -1714,7 +1751,7 @@ SIDEBARS & ASIDES
 			display: none;
 		}
 		.mc-field-group {
-			font-family: $vista;
+			font-family: $futura;
 		}
 	}
 	.footer-link-widget {
@@ -1769,7 +1806,7 @@ SIDEBARS & ASIDES
 		}
 		.location-hours {
 			margin: 1em 0 0;
-			font-family: $vista-light;
+			font-family: $futura;
 		}
 	}
 }
@@ -1780,7 +1817,7 @@ FOOTER STYLES
 
 .footer {
 	clear: both;
-	background-color: darken($puente-blue, 22%);
+	background-color: darken($deep-blue, 14%);
 	color: $white;
 }
 
@@ -1800,12 +1837,15 @@ FOOTER STYLES
 
 			li {
 				margin-bottom: 0;
+				a {
+					color: $online-blue;
+				}
 			}
 			#menu-item-233 {
 				a {
-					color: $puente-green;
+					color: $royalty;
 					&:hover, &:focus {
-						color: lighten($puente-green, 8%);
+						color: lighten($royalty, 8%);
 					}
 				}
 			}
@@ -1840,7 +1880,7 @@ FOOTER STYLES
 	// width: 500px !important;
 	font-size: 15px !important;
 	line-height: 1.5 !important;
-	border-color: $puente-light-blue2 !important;
+	border-color: $online-blue !important;
 	// border-radius: 4px !important;
 	box-shadow: 1px 3px 8px $puente-dark-grey !important;
 	z-index: 999;

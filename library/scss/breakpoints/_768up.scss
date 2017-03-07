@@ -43,8 +43,11 @@ HEADER STYLES
 *********************/
 
 .header {
+	border-bottom: 2px solid #efefef;
 	.header-search {
 		float: right;
+		top: 16px;
+    	position: relative;
 		
 		input[type="search"] {
 			// max-width: 250px;
@@ -54,10 +57,11 @@ HEADER STYLES
 			margin-right: .2em;
 			position: relative;
 			top: 6px;
-			height: 30px
+			height: 30px;
+			font-family: $futura;
 		}
 		input#s:focus {
-			border: 2px solid $puente-light-blue;
+			border: 2px solid $online-blue;
 		}
 		#searchsubmit {
 			margin: 0;
@@ -66,6 +70,13 @@ HEADER STYLES
     		position: relative;
     		top: 4px;
     		padding: 4px 5px;
+    		font-family: $futura;
+    		background: $online-blue;
+    		color: #fff !important;
+    		&:hover, &:focus {
+    			background: $balboa-blue;
+    			color: #fff;
+			}
 		}
 		div {
 			position: relative;
@@ -76,6 +87,7 @@ HEADER STYLES
     			left: 100px;
     			top: 15px;
     			color: #aaa;
+    			cursor: pointer;
 			}
 		}
 	}
@@ -83,13 +95,19 @@ HEADER STYLES
 }
 
 	#logo {
-		width: 130px;
+		width: 140px;
     	float: left;
     	padding:0;
     	a img {
     		top: 15px;
     	}
 	}
+
+.header.scroll-to-fixed-fixed {
+	#logo {
+		width: 130px;
+	}
+}
 
 /*********************
 NAVIGATION STYLES
@@ -103,12 +121,17 @@ NAVIGATION STYLES
 }
 
 #menu-item-73 {
-	background: $puente-green;
+	background: $royalty;
 	// margin-left: 1em;
+	top: 25px;
 	a {
+		color: #fff;
+		line-height: 48px;
+		
 		&:hover, &:focus {
-			background: darken($puente-green, 8%);
+			background: darken($royalty, 8%);
 			color: #fff;
+			
 		}
 	}
 }
@@ -116,7 +139,7 @@ NAVIGATION STYLES
 .nav {
 	border: 0;
 	ul {
-		background:$puente-blue;
+		background:$balboa-blue;
 		margin-top:0;
 		li a {
 			line-height: 32px;
@@ -128,14 +151,14 @@ NAVIGATION STYLES
 
 		a {
 			border-bottom: 0;
-			line-height: 65px;
+			line-height: 99px;
 			padding: 0 0.4em;
 			/*
 			you can use hover styles here even though this size
 			has the possibility of being a mobile device.
 			*/
 			&:hover, &:focus {
-				color: $puente-light-blue2;
+				color: $online-blue;
 				text-decoration: none;
 			}
 		}
@@ -148,21 +171,23 @@ NAVIGATION STYLES
 		*/
 		ul.sub-menu,
 		ul.children {
-			margin-top: 0;
+			margin-top: 2px;
 			border: 0;
 			border-top: 0;
 			position: absolute;
 			visibility: hidden;
 			z-index: 8999;
+			// top: 2px;
 
 			li {
 
 				a {
-					padding-left: 10px;
-					border-right: 0;
-					display: block;
-					width: 200px;
-					border-bottom: 1px solid lighten($puente-blue, 8%);
+					padding: 10px;
+    				border-right: 0;
+    				display: block;
+    				width: 220px;
+    				border-bottom: 1px solid $deep-blue;
+    				font-size: 1em;
 
 					&:hover,
 					&:focus { 
@@ -172,7 +197,7 @@ NAVIGATION STYLES
 					&:link {}
 				}
 				&:hover, &:focus {
-					background: $puente-light-blue2;
+					background: $online-blue;
 				}
 
 				&:first-child {}
@@ -200,7 +225,7 @@ NAVIGATION STYLES
 			li.current_page_item,
 			li.current_page_ancestor {
 				a {
-					color: darken($puente-light-blue2, 22%);
+					color: darken($online-blue, 22%);
 					&:hover, &:focus {
 					color: $puente-blue !important;
 					}
@@ -226,7 +251,7 @@ NAVIGATION STYLES
 	}  /* end current highlighters */
 	
 	li.current_page_item > a, li.current_page_ancestor > a {
-			color: $puente-light-blue2;
+			color: $online-blue;
 			&:hover, &:focus {
 					color: #fff;
 				}
@@ -505,7 +530,7 @@ SIDEBARS & ASIDES
 }
 
 	.widgettitle {
-		border-bottom: 2px solid #444;
+		border-bottom: 2px solid $balboa-blue;
 		margin-bottom: 0.75em;
 	}
 
@@ -645,7 +670,7 @@ mobile. Make sure to double check these!
 } /* end .footer-links */
 
 .copyright {
-	padding: 0 1.5em;
+	padding: 0 10px;
 }
 
 
@@ -663,7 +688,7 @@ mobile. Make sure to double check these!
 // 	// width: 500px !important;
 // 	font-size: 15px !important;
 // 	line-height: 1.5 !important;
-// 	border-color: $puente-light-blue2 !important;
+// 	border-color: $online-blue !important;
 // 	// border-radius: 4px !important;
 // 	box-shadow: 1px 3px 8px $puente-dark-grey !important;
 // 	z-index: 999;

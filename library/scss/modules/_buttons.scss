@@ -27,7 +27,7 @@ http://www.youtube.com/watch?v=hwdVpKiJzac
 %btn {
   display: inline-block;
   position: relative;
-  font-family: $vista;
+  font-family: $futura;
   text-decoration: none;
   color: $white;
   font-size: 1em;
@@ -109,9 +109,9 @@ and it will create a button dependant on those variables.
 %btn2 {
   display: inline-block;
   position: relative;
-  font-family: $vista;
+  font-family: $futura;
   text-decoration: none;
-  color: $puente-blue !important;
+  color: #fff !important;
   font-size: 1em;
   // font-size: 1.4em;
   line-height: normal;
@@ -139,36 +139,37 @@ and it will create a button dependant on those variables.
 
 .puente-btn {
   @extend %btn2; // here we load the btn defaults
-  background-color: lighten($puente-light-blue2, 11%);
+  background-color: lighten($online-blue, 11%);
   // border-bottom: 6px solid darken($wab-purple, 8%);
   &:hover,
   &:focus {
-    background-color: darken($puente-light-blue2, 4%);
+    background-color: darken($online-blue, 4%);
   } // end hover
 
   &:active {
-    background-color: darken($puente-light-blue2, 5%);
+    background-color: darken($online-blue, 5%);
   } // end active
 }
 
 .big-btn {
   @extend %btn2; // here we load the btn defaults
-  font-size: 34px;
+  font-size: 1.6em;
   line-height: 34px;
-  font-weight: normal;
+  // font-weight: normal;
   padding: 12px 24px;
   border-radius: 2px;
   border: 0;
   cursor: pointer;
-  background-color: lighten($puente-light-blue2, 11%);
+  background-color: lighten($online-blue, 11%);
+  color: $white;
   // border-bottom: 6px solid darken($wab-purple, 8%);
   &:hover,
   &:focus {
-    background-color: darken($puente-light-blue2, 4%);
+    background-color: darken($online-blue, 4%);
     color: #fff !important;
   } // end hover
 
   &:active {
-    background-color: darken($puente-light-blue2, 5%);
+    background-color: darken($online-blue, 5%);
   } // end active
 }
