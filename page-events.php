@@ -70,7 +70,7 @@
 							'post_status'            => array( 'publish' ),
 							'meta_key'	=> 'date',
 							'orderby'	=> 'meta_value_num',
-							'order'		=> 'ASC'
+							'order'		=> 'DESC'
 						);
 						
 						// The Query

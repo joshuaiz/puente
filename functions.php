@@ -314,5 +314,71 @@ function puente_update_acf_license() {
 }
 add_action('init', 'puente_update_acf_license');
 
+//* Gravity Forms notification popup instead of the page redirect or AJAX notification
+//* @link https://anythinggraphic.net/gravity-forms-notification-popup
+
+/* Override the default Gravity Forms confirmation behavior, displaying it in a popup. Remember to style the divs.
+----------------------------------------------------------------------------------------*/
+add_filter( 'gform_confirmation_5', 'ag_custom_confirmation', 10, 4 );
+function ag_custom_confirmation( $confirmation, $form, $entry, $ajax ) {
+  add_filter( 'wp_footer', 'ag_overlay');
+  return '<div id="gform-notification">' . $confirmation . '<a class="button" href="#">OK</a></div>';
+}
+
+/* Add script to remove the overlay and confirmation message once the button in the popup is clicked.
+----------------------------------------------------------------------------------------*/
+function ag_overlay() {
+  echo '<div id="overlay"></div>';
+  echo '
+    <script type="text/javascript">
+      jQuery("body").addClass("message-sent");
+      jQuery("#gform-notification a").click(function() {
+        jQuery("#overlay,#gform-notification").fadeOut("normal", function() {
+          $(this).remove();
+        });
+      });
+    </script>
+  ';
+}
+
+
+
+// Do this only once. Can go anywhere inside your functions.php file
+$role_object = get_role( 'editor' );
+$role_object->add_cap( 'edit_theme_options' );
+
+
+
+
+/**
+ * Add all Gravity Forms capabilities to Editor role.
+ * Runs when this theme is activated.
+ * 
+ * @access public
+ * @return void
+ */
+function grant_gforms_editor_access() {
+  
+  $role = get_role( 'editor' );
+  $role->add_cap( 'gform_full_access' );
+}
+// Tie into the 'after_switch_theme' hook
+add_action( 'after_switch_theme', 'grant_gforms_editor_access' );
+
+/**
+ * Remove Gravity Forms capabilities from Editor role.
+ * Runs when this theme is deactivated (in favor of another).
+ * 
+ * @access public
+ * @return void
+ */
+function revoke_gforms_editor_access() {
+  
+  $role = get_role( 'editor' );
+  $role->remove_cap( 'gform_full_access' );
+}
+// Tie into the 'switch_theme' hook
+add_action( 'switch_theme', 'revoke_gforms_editor_access' );
+
 
 /* DON'T DELETE THIS CLOSING TAG */ ?>

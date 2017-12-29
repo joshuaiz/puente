@@ -390,8 +390,7 @@ NAVIGATION STYLES
       .nav li a:hover, .nav li a:focus {
         color: #00AEEF;
         text-decoration: none; }
-    .nav li ul.sub-menu,
-    .nav li ul.children {
+    .nav li ul.sub-menu {
       margin-top: 2px;
       border: 0;
       border-top: 0;
@@ -399,62 +398,40 @@ NAVIGATION STYLES
       visibility: hidden;
       z-index: 8999;
       /* highlight sub-menu current page */ }
-      .nav li ul.sub-menu li,
-      .nav li ul.children li {
+      .nav li ul.sub-menu li {
         /*
 				if you need to go deeper, go nuts
 				just remember deeper menus suck
 				for usability. k, bai.
 				*/ }
-        .nav li ul.sub-menu li a,
-        .nav li ul.children li a {
+        .nav li ul.sub-menu li a {
           padding: 10px;
           border-right: 0;
           display: block;
           width: 220px;
           border-bottom: 1px solid #0D4E98;
-          font-size: 1em; }
-          .nav li ul.sub-menu li a:hover, .nav li ul.sub-menu li a:focus,
-          .nav li ul.children li a:hover,
-          .nav li ul.children li a:focus {
+          font-size: 1em;
+          color: #fff; }
+          .nav li ul.sub-menu li a:hover, .nav li ul.sub-menu li a:focus {
             color: #fff; }
-        .nav li ul.sub-menu li:hover, .nav li ul.sub-menu li:focus,
-        .nav li ul.children li:hover,
-        .nav li ul.children li:focus {
+        .nav li ul.sub-menu li:hover, .nav li ul.sub-menu li:focus {
           background: #00AEEF; }
-        .nav li ul.sub-menu li:last-child a,
-        .nav li ul.children li:last-child a {
+        .nav li ul.sub-menu li:last-child a {
           border-bottom: 0; }
-        .nav li ul.sub-menu li ul,
-        .nav li ul.children li ul {
+        .nav li ul.sub-menu li ul {
           top: 0;
           left: 100%; }
-      .nav li ul.sub-menu li.current-menu-item a,
-      .nav li ul.sub-menu li.current_page_item a,
-      .nav li ul.sub-menu li.current_page_ancestor a,
-      .nav li ul.children li.current-menu-item a,
-      .nav li ul.children li.current_page_item a,
-      .nav li ul.children li.current_page_ancestor a {
-        color: #005c7f; }
-        .nav li ul.sub-menu li.current-menu-item a:hover, .nav li ul.sub-menu li.current-menu-item a:focus,
-        .nav li ul.sub-menu li.current_page_item a:hover,
-        .nav li ul.sub-menu li.current_page_item a:focus,
-        .nav li ul.sub-menu li.current_page_ancestor a:hover,
-        .nav li ul.sub-menu li.current_page_ancestor a:focus,
-        .nav li ul.children li.current-menu-item a:hover,
-        .nav li ul.children li.current-menu-item a:focus,
-        .nav li ul.children li.current_page_item a:hover,
-        .nav li ul.children li.current_page_item a:focus,
-        .nav li ul.children li.current_page_ancestor a:hover,
-        .nav li ul.children li.current_page_ancestor a:focus {
-          color: #235ba8 !important; }
+      .nav li ul.sub-menu li.current-menu-item a:hover, .nav li ul.sub-menu li.current-menu-item a:focus,
+      .nav li ul.sub-menu li.current_page_item a:hover,
+      .nav li ul.sub-menu li.current_page_item a:focus,
+      .nav li ul.sub-menu li.current_page_ancestor a:hover,
+      .nav li ul.sub-menu li.current_page_ancestor a:focus {
+        color: #fff !important; }
     .nav li:hover > ul {
       top: auto;
       visibility: visible; }
   .nav li.current_page_item > a, .nav li.current_page_ancestor > a {
     color: #00AEEF; }
-    .nav li.current_page_item > a:hover, .nav li.current_page_item > a:focus, .nav li.current_page_ancestor > a:hover, .nav li.current_page_ancestor > a:focus {
-      color: #fff; }
 
 /* end .nav */
 /********************
@@ -468,6 +445,18 @@ style a page via class
 .home .content-b {
   width: 70%;
   padding: 0 12%; }
+
+.home .posts-list li {
+  max-width: 25%;
+  margin-right: 1em; }
+  .home .posts-list li h4 {
+    margin-top: 0;
+    line-height: normal; }
+  .home .posts-list li .post-image {
+    float: left;
+    margin-right: 8px; }
+    .home .posts-list li .post-image img {
+      vertical-align: top; }
 
 /* home page */
 /* blog template page */
@@ -534,27 +523,27 @@ style a page via class
     width: 45%;
     margin-right: 1.5em; }
 
-.programs #main {
+.programs #main, .page-charter-kindergarten #main {
   width: 61.8%;
   margin: 0 auto;
   float: none; }
 
-.programs .program-outer .program-groups .program-group .program-group-inner {
+.programs .program-outer .program-groups .program-group .program-group-inner, .page-charter-kindergarten .program-outer .program-groups .program-group .program-group-inner {
   width: 61.8%; }
 
-.programs .program-outer .program-groups .program-group .program-photo {
+.programs .program-outer .program-groups .program-group .program-photo, .page-charter-kindergarten .program-outer .program-groups .program-group .program-photo {
   clear: both;
   float: left;
   margin-right: 1.5em;
   margin-bottom: 2.2em; }
-  .programs .program-outer .program-groups .program-group .program-photo img {
+  .programs .program-outer .program-groups .program-group .program-photo img, .page-charter-kindergarten .program-outer .program-groups .program-group .program-photo img {
     width: 250px;
     height: auto; }
 
-.programs .program-outer .program-groups .program-group .program-contact {
+.programs .program-outer .program-groups .program-group .program-contact, .page-charter-kindergarten .program-outer .program-groups .program-group .program-contact {
   padding-top: 1.5em;
   border-top: 1px dotted #efefef; }
-  .programs .program-outer .program-groups .program-group .program-contact .program-contact-image {
+  .programs .program-outer .program-groups .program-group .program-contact .program-contact-image, .page-charter-kindergarten .program-outer .program-groups .program-group .program-contact .program-contact-image {
     float: left;
     margin-right: 1em; }
 
@@ -614,6 +603,20 @@ style a page via class
   width: 270px;
   padding: 0 .5em;
   line-height: normal; }
+
+.page-blog #inner-content {
+  background-color: #efefe3;
+  width: 100%; }
+
+.page-blog #main {
+  float: none;
+  width: 100%; }
+
+.page-blog .posts-outer {
+  padding: 2.2em;
+  width: 70%;
+  margin: 0 auto 3em;
+  background: #fff; }
 
 /*********************
 SIDEBARS & ASIDES

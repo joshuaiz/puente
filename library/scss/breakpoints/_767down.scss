@@ -1,67 +1,69 @@
 #inner-header {
+    #logo {
+        position: relative;
 
-	#logo {
-		width: 150px;
-			position: relative;
-			top: 12px;
-		img {
-			
-		}
-	}
-	.header-search {
-		display: none;
-	}
+        // top: 12px;
+        padding: 1em 0;
+        width: 150px;
+
+        img {}
+    }
+
+    .header-search {
+        display: none;
+    }
 }
 
 .fullscreen.parallax {
-	// background-image: url('https://dev.puente.org/wp-content/uploads/2016/01/plc_inside_green@2x.jpg');
-	// background-attachment: fixed;
+    // background-image: url('https://dev.puente.org/wp-content/uploads/2016/01/plc_inside_green@2x.jpg');
+    // background-attachment: fixed;
 }
 
 .content-b {
-	padding: .5em;
+    padding: .5em;
 }
 
 #click-menu {
-	top: 14px !important;
-	position: relative;
+    position: relative;
+    top: 14px !important;
 }
 
 #popup {
-	// left: 0;
-	// margin: 0 1em;
-	// max-width: 93%;
-	a.close {
-		top: 14px;
-    	right: 14px;
-	}
+    // left: 0;
+    // margin: 0 1em;
+    // max-width: 93%;
+    a.close {
+        top: 14px;
+        right: 14px;
+    }
 }
 
 .page-header h1 {
-	font-size: 1.4438em;
+    font-size: 1.4438em;
 }
 
 #text-4 {
-	width: 96%;
+    width: 96%;
 }
 
 #acf_widget_210-2 {
-	margin: 0 auto;
+    margin: 0 auto;
 }
 
 .responsive-menu {
-	.sub-menu {
-		margin: 0;
-		li {
-			background: lighten($puente-blue, 16%);
-		}
-	}
-	.menu-item-73 {
-		background: $puente-green;
-	}
-	
+    .sub-menu {
+        margin: 0;
+
+        li {
+            background: lighten($puente-blue, 16%);
+        }
+    }
+
+    .menu-item-73 {
+        background: $puente-green;
+    }
 }
 
 #responsive-menu #responsiveSearch #responsiveSearchInput {
-		padding: 0 0 0 6px !important;
-	}
+    padding: 0 0 0 6px !important;
+}

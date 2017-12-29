@@ -430,6 +430,10 @@ viewport = updateViewportDimensions();
 });
 
 jQuery(document).ready(function($){
+    $('.gform_button').addClass('puente-btn');
+});
+
+jQuery(document).ready(function($){
     /* detect touch */
 if("ontouchstart" in window){
     document.documentElement.className = document.documentElement.className + " touch";

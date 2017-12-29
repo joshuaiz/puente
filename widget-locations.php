@@ -83,5 +83,3 @@ if( have_rows('locations', $acfw) ): ?>
 	</ul>
 
 <?php endif; ?>
-
-<p class="small">These hours are for August – June. For summer hours, please call the office.</p>

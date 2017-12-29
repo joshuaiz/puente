@@ -1,20 +1,32 @@
 #inner-header {
+    .header-search {
+        display: none;
+    }
+}
 
-	.header-search {
-		display: none;
-	}
-	
+.responsive-menu-box {
+    top: 3px !important;
 }
 
 #responsive-menu-button {
-	background: transparent !important;
+    background: transparent !important;
+}
+
+button#responsive-menu-button {
+    position: fixed;
+    top: 70px !important;
+    right: 5%;
+    width: 50px;
+    height: 50px;
+    background-color: #0D4E98 !important;
 }
 
 #responsive-menu-item-73 {
-	a {
-		background: $puente-green !important;
-		&:hover, &:focus {
-			background: darken($puente-green, 14%) !important;
-		}
-	}
+    a {
+        background: $puente-green !important;
+
+        &:hover, &:focus {
+            background: darken($puente-green, 14%) !important;
+        }
+    }
 }

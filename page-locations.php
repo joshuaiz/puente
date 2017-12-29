@@ -143,8 +143,6 @@
 							</ul>
 							
 							<?php endif; ?>
-							
-							<p>These hours are for August – June. For summer hours, please call the office.</p>
 
 
 						</section>

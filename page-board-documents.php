@@ -1,6 +1,7 @@
 <?php
 /*
- Template Name: Donate Page
+ Template Name: Board Documents Page
+ *
 */
 ?>
 
@@ -8,21 +9,19 @@
 
 			<div id="content">
 
-			<header class="page-header">
-
-				<div class="page-inner-header wrap cf">
-
-					<?php $postid = get_the_ID(); ?>
-
-					<?php $spanish = get_field('spanish_title', $postid); ?>
-
-					<h1 class="page-title"><?php the_title(); ?> <span class="separator">|</span> <?php echo $spanish; ?></h1>
-
-					
-
-				</div>
-
-			</header>
+				<header class="page-header">
+	
+					<div class="page-inner-header wrap cf">
+	
+						<?php $postid = get_the_ID(); ?>
+	
+						<?php $spanish = get_field('spanish_title', $postid); ?>
+	
+						<h1 class="page-title"><?php the_title(); ?> <span class="separator">|</span> <?php echo $spanish; ?></h1>
+	
+					</div>
+	
+				</header>
 
 				<div id="inner-content" class="wrap cf">
 
@@ -35,38 +34,56 @@
 
 							<article id="post-<?php the_ID(); ?>" <?php post_class( 'cf' ); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
 
-
 								<section class="entry-content cf" itemprop="articleBody">
 									<?php
 										// the content (pretty self explanatory huh)
 										the_content();
 
-								
 									?>
-
-									<div class="donate-form">
-
-                  						<h3>Donate Another Way</h3>
-                  						<p>Download the form below to become a Friend of PUENTE with your check or cash donation by mail.</p>
-
-                  						<?php $file = get_field('file'); ?>
-
-                  						<?php if( $file ): ?>
-	
-											<a class="puente-btn" href="<?php echo $file['url']; ?>">Friend of PUENTE Donation Form</a>
-
-										<?php endif; ?>
-
-                  					</div>
 								</section>
 
+								<section class="documents-outer">
+
+								    <section class="documents-inner">
+
+								    <?php if( have_rows('documents') ): ?>
+
+										<ul class="documents-list nostyle">
+									
+										<?php while( have_rows('documents') ): the_row(); 
+									
+											// vars
+											$file = get_sub_field('document');
+											
+									
+											?>
+									
+											<li class="slide">
+									
+												<?php 
+
+												if( $file ): ?>
+													
+													<a href="<?php echo $file['url']; ?>"><img class="document-icon" src="<?php echo get_template_directory_uri(); ?>/library/images/pdf.png" /> <?php echo $file['title']; ?></a>
+												
+												<?php endif; ?>
+									
+											</li>
+									
+										<?php endwhile; ?>
+									
+										</ul>
+									
+									<?php endif; ?>
+								    
+								    </section>
+								
+								</section>
 
 								<footer class="article-footer">
 
-                  					
 
 								</footer>
-
 
 							</article>
 
@@ -88,7 +105,7 @@
 
 						</main>
 
-						
+							
 
 				</div>
 
